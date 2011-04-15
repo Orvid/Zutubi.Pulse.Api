@@ -5,7 +5,7 @@ using org.apache.xmlrpc.client;
 using Zutubi.Pulse.Api.Types;
 using java.util;
 
-namespace Zutubi.Pulse.Api
+namespace Zutubi.Pulse.Api.Example
 {
     /// <summary>
     /// The main interface to the Pulse Server.
@@ -274,6 +274,38 @@ namespace Zutubi.Pulse.Api
             }
             return rslt;
         }
+
+        /// <summary>
+        /// Adds a comment to a build result. Comments are used to communicate with other users viewing the build.
+        /// </summary>
+        /// <param name="projectName">The name of the project owning the build.</param>
+        /// <param name="buildId">The ID of the build to comment on.</param>
+        /// <param name="message">The comment message to add.</param>
+        /// <returns>The ID of the created comment.</returns>
+        public static String AddBuildComment(string projectName, int buildId, string message)
+        {
+            return (string)Client.execute("RemoteApi.addBuildComment", java.util.Arrays.asList(new object[] { authToken, projectName, buildId, message }));
+        }
+
+        /// <summary>
+        /// Request that the given active build is cancelled. 
+        /// This function returns at the time the request is made, which 
+        /// is likely to be before the build is cancelled (if indeed it is cancelled).
+        /// </summary>
+        /// <param name="projectName">The name of the project that is building.</param>
+        /// <param name="buildID">The id of the build to cancel.</param>
+        /// <returns>True if cancellation was requested, false if the build was not found or was not in progress.</returns>
+        public static bool CancelBuild(string projectName, int buildID)
+        {
+            return (bool)Client.execute("RemoteApi.cancelBuild", java.util.Arrays.asList(new object[] { authToken, projectName, buildID }));
+        }
+
+        public static bool CancelQueuedBuildRequest(string id)
+        {
+            return (bool)Client.execute("RemoteApi.cancelQueuedBuildRequiest", new object[] { authToken, id });
+        }
+
+
 
     }
 }

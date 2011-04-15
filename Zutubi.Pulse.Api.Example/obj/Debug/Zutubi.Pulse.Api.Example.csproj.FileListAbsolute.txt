@@ -1,7 +1,0 @@
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Bin\Zutubi.Pulse.Api.Example.exe
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Zutubi.Pulse.Api.Example\obj\Debug\ResolveAssemblyReference.cache
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Zutubi.Pulse.Api.Example\obj\Debug\Zutubi.Pulse.Api.Example.MainForm.resources
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Zutubi.Pulse.Api.Example\obj\Debug\Zutubi.Pulse.Api.Example.ServerLoginForm.resources
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Zutubi.Pulse.Api.Example\obj\Debug\GenerateResource-ResGen.read.1.tlog
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Zutubi.Pulse.Api.Example\obj\Debug\GenerateResource-ResGen.write.1.tlog
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Zutubi.Pulse.Api.Example\obj\Debug\Zutubi.Pulse.Api.Example.exe

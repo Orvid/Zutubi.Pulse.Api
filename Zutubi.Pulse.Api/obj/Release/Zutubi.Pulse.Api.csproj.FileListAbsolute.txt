@@ -1,6 +1,0 @@
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Bin\Zutubi.Pulse.Api.xml
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Bin\Zutubi.Pulse.Api.dll
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Bin\Zutubi.Pulse.Api.pdb
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Zutubi.Pulse.Api\obj\Release\ResolveAssemblyReference.cache
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Zutubi.Pulse.Api\obj\Release\Zutubi.Pulse.Api.dll
-D:\Documents and Settings\Orvid\Desktop\Zutubi.Pulse\Zutubi.Pulse.Api\obj\Release\Zutubi.Pulse.Api.pdb
