@@ -34,8 +34,29 @@
     <DocumentationFile>..\Bin\Zutubi.Pulse.Api.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Interface.cs" />
+    <Compile Include="Interface\Base.cs" />
+    <Compile Include="Interface\CanPullUpConfig.cs" />
+    <Compile Include="Interface\CanCloneConfig.cs" />
+    <Compile Include="Interface\CancelQueuedBuildRequest.cs" />
+    <Compile Include="Interface\CancelBuild.cs" />
+    <Compile Include="Interface\AddBuildComment.cs" />
+    <Compile Include="Interface\GetLatestBuildsForProject.cs" />
+    <Compile Include="Interface\GetAllProjectNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serializers\BuildResultSerializer.cs" />
+    <Compile Include="Serializers\ArtifactSerializer.cs" />
+    <Compile Include="Serializers\ChangeListSerializer.cs" />
+    <Compile Include="Serializers\CommandResultPropertiesSerializer.cs" />
+    <Compile Include="Serializers\CommentSerializer.cs" />
+    <Compile Include="Serializers\FeatureSerializer.cs" />
+    <Compile Include="Serializers\FileChangeSerializer.cs" />
+    <Compile Include="Serializers\QueuedBuildSerializer.cs" />
+    <Compile Include="Serializers\ReportDataSerializer.cs" />
+    <Compile Include="Serializers\ReportSeriesSerializer.cs" />
+    <Compile Include="Serializers\BuildRequestStatusSerializer.cs" />
+    <Compile Include="Serializers\StageResultSerializer.cs" />
+    <Compile Include="Serializers\CommandResultSerializer.cs" />
+    <Compile Include="Serializers\TestSummarySerializer.cs" />
     <Compile Include="Types\Artifact.cs" />
     <Compile Include="Types\BuildRequestStatus.cs" />
     <Compile Include="Types\BuildResult.cs" />
@@ -56,6 +77,7 @@
     <Reference Include="Org.Apache.XmlRpc">
       <HintPath>..\Org.Apache.XmlRpc.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

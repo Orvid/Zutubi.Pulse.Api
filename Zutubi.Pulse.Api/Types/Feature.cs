@@ -18,9 +18,9 @@ namespace Zutubi.Pulse.Api.Types
     public struct Feature
     {
         /// <summary>
-        /// The type of feature, one of "error", "warning" or "info". 
+        /// The type of feature. 
         /// </summary>
-        public String Level;
+        public FeatureLevel Level;
         /// <summary>
         /// The feature message, which may be multi-line if captured from an artifact with context.
         /// </summary>
@@ -41,5 +41,25 @@ namespace Zutubi.Pulse.Api.Types
         /// Path of the artifact file that the feature was extracted from, not present if the feature was not found in an artifact. 
         /// </summary>
         public String Path;
+    }
+    /// <summary>
+    /// The enum that describes the possible values for a Feature's Level property.
+    /// </summary>
+    public enum FeatureLevel
+    {
+        /// <summary>
+        /// This level means that the Feature caused the build to be unable to continue.
+        /// </summary>
+        Error,
+        /// <summary>
+        /// This level means that the Feature might be a 
+        /// problem, but didn't cause a problem in the build.
+        /// </summary>
+        Warning,
+        /// <summary>
+        /// This level means the Feature didn't cause anything 
+        /// and was just emitted to provide more info on the build.
+        /// </summary>
+        Info
     }
 }
