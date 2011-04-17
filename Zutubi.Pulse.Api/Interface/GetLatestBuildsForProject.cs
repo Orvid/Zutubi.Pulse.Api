@@ -29,7 +29,11 @@ namespace Zutubi.Pulse.Api
                 CompOnly = java.lang.Boolean.FALSE;
             }
             java.lang.Integer MaxRslt = java.lang.Integer.valueOf(maxResults.ToString());
-            HashMap[]builds = (HashMap[])Client.execute("RemoteApi.getLatestBuildsForProject", java.util.Arrays.asList(new object[] { authToken, projectName, CompOnly, MaxRslt}));
+            List<HashMap> builds = new List<HashMap>();
+            foreach (Object o in (Object[])Client.execute("RemoteApi.getLatestBuildsForProject", java.util.Arrays.asList(new object[] { authToken, projectName, CompOnly, MaxRslt})))
+            {
+                builds.Add((HashMap)o);
+            }
             foreach (HashMap hm in builds)
             {
                 rslt.Add(Serializers.SerializeBuildResult(hm));

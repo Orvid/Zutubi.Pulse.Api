@@ -17,17 +17,20 @@ namespace Zutubi.Pulse.Api
         {
             StageResult sr = new StageResult();
             sr.Agent = (string)hm.get("agent");
-            sr.Completed = (Boolean)hm.get("completed");
-            sr.EndTime = DateTime.Parse(((Date)hm.get("endTime")).toString());
-            sr.ErrorCount = (int)hm.get("errorCount");
+            sr.Completed = Boolean.Parse(((java.lang.Boolean)hm.get("completed")).toString());
+            //sr.EndTime = DateTime.Parse(((Date)hm.get("endTime")).toString());
+            sr.ErrorCount = Int32.Parse(((java.lang.Integer)hm.get("errorCount")).toString());
             sr.Name = (string)hm.get("name");
-            sr.Progress = (int)hm.get("progress");
-            sr.StartTime = DateTime.Parse(((Date)hm.get("startTime")).toString());
+            sr.Progress = Int32.Parse(((java.lang.Integer)hm.get("progress")).toString());
+            //sr.StartTime = DateTime.Parse(((Date)hm.get("startTime")).toString());
             sr.Status = (string)hm.get("status");
-            sr.Succeeded = (bool)hm.get("succeeded");
-            sr.WarningCount = (int)hm.get("warningCount");
-            HashMap hm2 = (HashMap)hm.get("commands");
-            sr.Commands = SerializeCommandResult(hm2);
+            sr.Succeeded = Boolean.Parse(((java.lang.Boolean)hm.get("succeeded")).toString());
+            sr.WarningCount = Int32.Parse(((java.lang.Integer)hm.get("warningCount")).toString());
+            Object[] hm2 = (Object[])hm.get("commands");
+            foreach(Object o in hm2)
+            {
+                sr.Commands = SerializeCommandResult((HashMap)o);
+            }
             HashMap hm3 = (HashMap)hm.get("tests");
             sr.Tests = SerializeTestSummary(hm3);
             return sr;

@@ -1,0 +1,24 @@
+<colorScheme saveOptions="ChangedThemeColors">
+  <themes />
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="MarkupTextCustom5">
+    <Default>Lime</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TextColor">
+    <Default>Lime</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="MarkupTextCustom4">
+    <Default>Lime</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="MarkupText">
+    <Default>Lime</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="MarkupTextCustom1">
+    <Default>Lime</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="MarkupTextCustom2">
+    <Default>Lime</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="MarkupTextCustom3">
+    <Default>Lime</Default>
+  </color>
+</colorScheme>

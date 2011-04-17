@@ -29,6 +29,13 @@ namespace Zutubi.Pulse.Api.Example
                 i.SubItems.Add(br.Reason);
                 i.SubItems.Add(br.Tests.Total.ToString());
             }
+            qMarkupLabel1.BringToFront();
+        }
+
+        private void qMarkupLabel1_ElementLinkClick(object sender, Qios.DevSuite.Components.QMarkupTextElementEventArgs e)
+        {
+            this.Close();
+            this.Dispose();
         }
    }
 }

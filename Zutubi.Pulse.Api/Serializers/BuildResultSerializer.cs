@@ -16,22 +16,23 @@ namespace Zutubi.Pulse.Api
         public static BuildResult SerializeBuildResult(HashMap hm)
         {
             BuildResult br = new BuildResult();
-            br.Completed = (bool)hm.get("completed");
+            br.Completed = Convert.ToBoolean(hm.get("completed").ToString());
             
-            br.EndTime = DateTime.Parse(((Date)hm.get("endTime")).toString());
+            //br.EndTime = DateTime.Parse(((Date)hm.get("endTime")).toString());
             br.EndTimeMillis = (string)hm.get("endTimeMillis");
-            br.ErrorCount = (int)hm.get("errorCount");
-            br.ID = (string)hm.get("id");
-            br.Progress = (int)hm.get("progress");
+            br.ErrorCount = Int32.Parse(((java.lang.Integer)hm.get("errorCount")).toString());
+            br.ID = (string)((java.lang.Integer)hm.get("id")).toString();
+            br.Progress = Int32.Parse(((java.lang.Integer)hm.get("progress")).toString());
             br.Reason = (string)hm.get("reason");
             br.Revision = (string)hm.get("revision");
-            br.StartTime = DateTime.Parse(((Date)hm.get("startTime")).toString());
+            //br.StartTime = DateTime.Parse(((Date)hm.get("startTime")).toString());
             br.StartTimeMillis = (string)hm.get("startTimeMillis");
             br.Status = (string)hm.get("status");
-            br.WarningCount = (int)hm.get("warningCount");
-            foreach (HashMap hm2 in (HashMap[])hm.get("stages"))
+            br.WarningCount = Int32.Parse(((java.lang.Integer)hm.get("warningCount")).toString());
+            br.Stages = new List<StageResult>();
+            foreach (Object hm2 in (Object[])hm.get("stages"))
             {
-                br.Stages.Add(SerializeStageResult(hm2));
+                br.Stages.Add(SerializeStageResult((HashMap)hm2));
             }
             HashMap hm3 = (HashMap)hm.get("tests");
             br.Tests = SerializeTestSummary(hm3);

@@ -16,12 +16,12 @@ namespace Zutubi.Pulse.Api
         public static TestSummary SerializeTestSummary(HashMap hm)
         {
             TestSummary ts = new TestSummary();
-            ts.Errors = (int)hm.get("errors");
-            ts.ExpectedFailures = (int)hm.get("expectedFailures");
-            ts.Failures = (int)hm.get("failures");
-            ts.Passed = (int)hm.get("passed");
-            ts.Skipped = (int)hm.get("skipped");
-            ts.Total = (int)hm.get("total");
+            ts.Errors = Int32.Parse(((java.lang.Integer)hm.get("errors")).toString());
+            ts.ExpectedFailures = Int32.Parse(((java.lang.Integer)hm.get("expectedFailures")).toString());
+            ts.Failures = Int32.Parse(((java.lang.Integer)hm.get("failures")).toString());
+            ts.Passed = Int32.Parse(((java.lang.Integer)hm.get("passed")).toString());
+            ts.Skipped = Int32.Parse(((java.lang.Integer)hm.get("skipped")).toString());
+            ts.Total = Int32.Parse(((java.lang.Integer)hm.get("total")).toString());
             return ts;
         }
     }

@@ -17,23 +17,57 @@ namespace Zutubi.Pulse.Api.Example
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (textBox1.Text != "")
             {
-                Zutubi.Pulse.Api.Interface.SetServer(textBox1.Text);
-                try
+                if (textBox3.Text != "")
                 {
-                    Zutubi.Pulse.Api.Interface.Login(textBox3.Text, textBox4.Text);
-                    this.Close();
-                    this.Dispose();
+                    if (textBox4.Text != "")
+                    {
+                        string srvloc = textBox1.Text;
+                        if (srvloc.Substring(srvloc.Length - 1) != "/")
+                        {
+                            srvloc = srvloc + "/";
+                        }
+                        if (srvloc.Length > 7 && srvloc.Substring(srvloc.Length - 6) != "xmlrpc")
+                        {
+                            srvloc = srvloc + "xmlrpc";
+                        }
+                        if (!srvloc.Contains("http://") && !srvloc.Contains("https://"))
+                        {
+                            srvloc = "http://" + srvloc;
+                        }
+                        try
+                        {
+                            Zutubi.Pulse.Api.Interface.SetServer(srvloc);
+                            try
+                            {
+                                Zutubi.Pulse.Api.Interface.Login(textBox3.Text, textBox4.Text);
+                                this.Close();
+                                this.Dispose();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("You must specify a password!");
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("You must specify a username!");
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("You must enter a server to connect to!");
             }
         }
 

@@ -29,20 +29,23 @@ namespace Zutubi.Pulse.Api.Example
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
-            "TestMain",
-            "Test",
-            "Test2",
-            "Test3",
-            "Test4",
-            "Test5"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Test2");
+            Qios.DevSuite.Components.QMarkupTextStyle qMarkupTextStyle2 = new Qios.DevSuite.Components.QMarkupTextStyle();
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
+            treeNode3});
             this.qTabControl1 = new Qios.DevSuite.Components.QTabControl();
             this.DashboardTab = new Qios.DevSuite.Components.QTabPage();
+            this.qMarkupLabel1 = new Qios.DevSuite.Components.QMarkupLabel();
             this.BrowseTab = new Qios.DevSuite.Components.QTabPage();
+            this.ProjectListView = new System.Windows.Forms.ListView();
+            this.ProjectNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LastBuildColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LastBuildStatusColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RevisionColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TimeBuildRanColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TimeToBuildColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.BuildReasonColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TestsColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ServerTab = new Qios.DevSuite.Components.QTabPage();
             this.AgentsTab = new Qios.DevSuite.Components.QTabPage();
             this.AdministrationTab = new Qios.DevSuite.Components.QTabPage();
@@ -56,15 +59,6 @@ namespace Zutubi.Pulse.Api.Example
             this.GroupAdminTab = new Qios.DevSuite.Components.QTabPage();
             this.PluginsAdminTab = new Qios.DevSuite.Components.QTabPage();
             this.qPersistenceManager1 = new Qios.DevSuite.Components.QPersistenceManager(this.components);
-            this.ProjectListView = new System.Windows.Forms.ListView();
-            this.ProjectNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LastBuildColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LastBuildStatusColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.RevisionColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TimeBuildRanColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TimeToBuildColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.BuildReasonColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.TestsColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.qTabControl1)).BeginInit();
             this.qTabControl1.SuspendLayout();
             this.BrowseTab.SuspendLayout();
@@ -95,6 +89,7 @@ namespace Zutubi.Pulse.Api.Example
             this.qTabControl1.ColorScheme.TabStripBackground2.SetColor("Default", System.Drawing.Color.DarkRed, false);
             this.qTabControl1.ColorScheme.TabStripNavigationAreaBackground1.SetColor("Default", System.Drawing.Color.OrangeRed, false);
             this.qTabControl1.ColorScheme.TabStripNavigationAreaBackground2.SetColor("Default", System.Drawing.Color.DarkRed, false);
+            this.qTabControl1.Controls.Add(this.qMarkupLabel1);
             this.qTabControl1.Controls.Add(this.DashboardTab);
             this.qTabControl1.Controls.Add(this.BrowseTab);
             this.qTabControl1.Controls.Add(this.ServerTab);
@@ -125,6 +120,40 @@ namespace Zutubi.Pulse.Api.Example
             this.DashboardTab.Size = new System.Drawing.Size(789, 518);
             this.DashboardTab.Text = "Dashboard";
             // 
+            // qMarkupLabel1
+            // 
+            this.qMarkupLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.qMarkupLabel1.ColorScheme.MarkupText.SetColor("Default", System.Drawing.Color.Lime, false);
+            this.qMarkupLabel1.ColorScheme.MarkupTextCustom1.SetColor("Default", System.Drawing.Color.Lime, false);
+            this.qMarkupLabel1.ColorScheme.MarkupTextCustom2.SetColor("Default", System.Drawing.Color.Lime, false);
+            this.qMarkupLabel1.ColorScheme.MarkupTextCustom3.SetColor("Default", System.Drawing.Color.Lime, false);
+            this.qMarkupLabel1.ColorScheme.MarkupTextCustom4.SetColor("Default", System.Drawing.Color.Lime, false);
+            this.qMarkupLabel1.ColorScheme.MarkupTextCustom5.SetColor("Default", System.Drawing.Color.Lime, false);
+            this.qMarkupLabel1.ColorScheme.TextColor.SetColor("Default", System.Drawing.Color.Lime, false);
+            this.qMarkupLabel1.Configuration.AdjustHeightToTextSize = false;
+            this.qMarkupLabel1.Configuration.CanFocus = false;
+            this.qMarkupLabel1.Configuration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.qMarkupLabel1.Configuration.WrapText = false;
+            this.qMarkupLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            qMarkupTextStyle2.FontDefinition = new Qios.DevSuite.Components.QFontDefinition(null, true, false, false, false, -1F);
+            qMarkupTextStyle2.FontDefinitionActive = new Qios.DevSuite.Components.QFontDefinition(null, true, false, false, false, -1F);
+            qMarkupTextStyle2.FontDefinitionHot = new Qios.DevSuite.Components.QFontDefinition(null, true, false, false, false, -1F);
+            qMarkupTextStyle2.TextColorActiveProperty = "Lime";
+            qMarkupTextStyle2.TextColorDisabledProperty = "Gray";
+            qMarkupTextStyle2.TextColorHotProperty = "Lime";
+            qMarkupTextStyle2.TextColorProperty = "Lime";
+            qMarkupTextStyle2.WrapText = Qios.DevSuite.Components.QTristateBool.False;
+            this.qMarkupLabel1.CustomStyles.Add(qMarkupTextStyle2);
+            this.qMarkupLabel1.FontScope = Qios.DevSuite.Components.QFontScope.Local;
+            this.qMarkupLabel1.LocalFont = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qMarkupLabel1.Location = new System.Drawing.Point(731, 3);
+            this.qMarkupLabel1.MarkupText = "Logout";
+            this.qMarkupLabel1.Name = "qMarkupLabel1";
+            this.qMarkupLabel1.Size = new System.Drawing.Size(53, 18);
+            this.qMarkupLabel1.TabIndex = 1;
+            this.qMarkupLabel1.ToolTipText = "Logout of the server.";
+            this.qMarkupLabel1.ElementLinkClick += new Qios.DevSuite.Components.QMarkupTextElementEventHandler(this.qMarkupLabel1_ElementLinkClick);
+            // 
             // BrowseTab
             // 
             this.BrowseTab.ButtonOrder = 1;
@@ -132,8 +161,65 @@ namespace Zutubi.Pulse.Api.Example
             this.BrowseTab.Location = new System.Drawing.Point(0, 27);
             this.BrowseTab.Name = "BrowseTab";
             this.BrowseTab.PersistGuid = new System.Guid("35d6615e-ba40-4057-864a-89ae8497e6dc");
-            this.BrowseTab.Size = new System.Drawing.Size(789, 518);
+            this.BrowseTab.Size = new System.Drawing.Size(791, 520);
             this.BrowseTab.Text = "Browse";
+            // 
+            // ProjectListView
+            // 
+            this.ProjectListView.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.ProjectListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ProjectNameColumn,
+            this.LastBuildColumn,
+            this.LastBuildStatusColumn,
+            this.RevisionColumn,
+            this.TimeBuildRanColumn,
+            this.TimeToBuildColumn,
+            this.BuildReasonColumn,
+            this.TestsColumn});
+            this.ProjectListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectListView.GridLines = true;
+            this.ProjectListView.Location = new System.Drawing.Point(0, 0);
+            this.ProjectListView.MultiSelect = false;
+            this.ProjectListView.Name = "ProjectListView";
+            this.ProjectListView.ShowGroups = false;
+            this.ProjectListView.Size = new System.Drawing.Size(791, 520);
+            this.ProjectListView.TabIndex = 0;
+            this.ProjectListView.UseCompatibleStateImageBehavior = false;
+            this.ProjectListView.View = System.Windows.Forms.View.Details;
+            // 
+            // ProjectNameColumn
+            // 
+            this.ProjectNameColumn.Text = "Name";
+            this.ProjectNameColumn.Width = 83;
+            // 
+            // LastBuildColumn
+            // 
+            this.LastBuildColumn.Text = "Last Build";
+            // 
+            // LastBuildStatusColumn
+            // 
+            this.LastBuildStatusColumn.Text = "Result";
+            this.LastBuildStatusColumn.Width = 96;
+            // 
+            // RevisionColumn
+            // 
+            this.RevisionColumn.Text = "Revision";
+            // 
+            // TimeBuildRanColumn
+            // 
+            this.TimeBuildRanColumn.Text = "When";
+            // 
+            // TimeToBuildColumn
+            // 
+            this.TimeToBuildColumn.Text = "Time";
+            // 
+            // BuildReasonColumn
+            // 
+            this.BuildReasonColumn.Text = "Reason";
+            // 
+            // TestsColumn
+            // 
+            this.TestsColumn.Text = "Tests";
             // 
             // ServerTab
             // 
@@ -160,7 +246,7 @@ namespace Zutubi.Pulse.Api.Example
             this.AdministrationTab.Location = new System.Drawing.Point(0, 27);
             this.AdministrationTab.Name = "AdministrationTab";
             this.AdministrationTab.PersistGuid = new System.Guid("b099d871-2f68-4941-9d58-34d90fc6ee06");
-            this.AdministrationTab.Size = new System.Drawing.Size(789, 518);
+            this.AdministrationTab.Size = new System.Drawing.Size(791, 520);
             this.AdministrationTab.Text = "Administration";
             // 
             // qTabControl2
@@ -193,7 +279,7 @@ namespace Zutubi.Pulse.Api.Example
             this.qTabControl2.Location = new System.Drawing.Point(0, 0);
             this.qTabControl2.Name = "qTabControl2";
             this.qTabControl2.PersistGuid = new System.Guid("132ce42f-091d-4d75-9d44-53589b049496");
-            this.qTabControl2.Size = new System.Drawing.Size(789, 518);
+            this.qTabControl2.Size = new System.Drawing.Size(791, 520);
             this.qTabControl2.TabIndex = 1;
             this.qTabControl2.TabStripBottomConfiguration.AllowDrag = false;
             this.qTabControl2.TabStripBottomConfiguration.AllowDrop = false;
@@ -211,7 +297,7 @@ namespace Zutubi.Pulse.Api.Example
             this.ProjectsTab.Location = new System.Drawing.Point(0, 27);
             this.ProjectsTab.Name = "ProjectsTab";
             this.ProjectsTab.PersistGuid = new System.Guid("93b1d06e-fd51-456b-8f5e-aad1c15ddcef");
-            this.ProjectsTab.Size = new System.Drawing.Size(787, 489);
+            this.ProjectsTab.Size = new System.Drawing.Size(789, 491);
             this.ProjectsTab.Text = "Projects";
             // 
             // splitContainer1
@@ -223,7 +309,7 @@ namespace Zutubi.Pulse.Api.Example
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.treeView1);
-            this.splitContainer1.Size = new System.Drawing.Size(787, 489);
+            this.splitContainer1.Size = new System.Drawing.Size(789, 491);
             this.splitContainer1.SplitterDistance = 262;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -233,13 +319,13 @@ namespace Zutubi.Pulse.Api.Example
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Node1";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "Node0";
+            treeNode3.Name = "Node1";
+            treeNode3.Text = "Node1";
+            treeNode4.Name = "Node0";
+            treeNode4.Text = "Node0";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            this.treeView1.Size = new System.Drawing.Size(262, 489);
+            treeNode4});
+            this.treeView1.Size = new System.Drawing.Size(262, 491);
             this.treeView1.TabIndex = 0;
             // 
             // AgentAdminTab
@@ -292,66 +378,6 @@ namespace Zutubi.Pulse.Api.Example
             this.qPersistenceManager1.OwnerControl = this.qTabControl1;
             this.qPersistenceManager1.PersistGuid = new System.Guid("7ac91e4a-4298-4d42-8f81-56efe3db6ea6");
             // 
-            // ProjectListView
-            // 
-            this.ProjectListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ProjectNameColumn,
-            this.LastBuildColumn,
-            this.LastBuildStatusColumn,
-            this.RevisionColumn,
-            this.TimeBuildRanColumn,
-            this.TimeToBuildColumn,
-            this.BuildReasonColumn,
-            this.TestsColumn});
-            this.ProjectListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProjectListView.GridLines = true;
-            listViewItem2.IndentCount = 1;
-            this.ProjectListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
-            this.ProjectListView.Location = new System.Drawing.Point(0, 0);
-            this.ProjectListView.MultiSelect = false;
-            this.ProjectListView.Name = "ProjectListView";
-            this.ProjectListView.ShowGroups = false;
-            this.ProjectListView.Size = new System.Drawing.Size(789, 518);
-            this.ProjectListView.TabIndex = 0;
-            this.ProjectListView.UseCompatibleStateImageBehavior = false;
-            this.ProjectListView.View = System.Windows.Forms.View.Details;
-            // 
-            // ProjectNameColumn
-            // 
-            this.ProjectNameColumn.Text = "Project Name";
-            this.ProjectNameColumn.Width = 83;
-            // 
-            // LastBuildColumn
-            // 
-            this.LastBuildColumn.Text = "Last Build";
-            // 
-            // LastBuildStatusColumn
-            // 
-            this.LastBuildStatusColumn.Text = "Last Build Result";
-            this.LastBuildStatusColumn.Width = 96;
-            // 
-            // RevisionColumn
-            // 
-            this.RevisionColumn.Text = "Revision";
-            // 
-            // TimeBuildRanColumn
-            // 
-            this.TimeBuildRanColumn.Text = "When";
-            // 
-            // TimeToBuildColumn
-            // 
-            this.TimeToBuildColumn.Text = "Time";
-            // 
-            // BuildReasonColumn
-            // 
-            this.BuildReasonColumn.Text = "Reason";
-            // 
-            // TestsColumn
-            // 
-            this.TestsColumn.Text = "Tests";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -401,6 +427,7 @@ namespace Zutubi.Pulse.Api.Example
         private System.Windows.Forms.ColumnHeader TimeToBuildColumn;
         private System.Windows.Forms.ColumnHeader BuildReasonColumn;
         private System.Windows.Forms.ColumnHeader TestsColumn;
+        private Qios.DevSuite.Components.QMarkupLabel qMarkupLabel1;
 
     }
 }
