@@ -19,7 +19,17 @@ namespace Zutubi.Pulse.Api
         {
             CheckAuth();
             List<BuildResult> rslt = new List<BuildResult>();
-            HashMap[]builds = (HashMap[])Client.execute("RemoteApi.getLatestBuildsForProject", java.util.Arrays.asList(new object[] { authToken, projectName, completedOnly, maxResults }));
+            java.lang.Boolean CompOnly;
+            if (completedOnly)
+            {
+                CompOnly = java.lang.Boolean.TRUE;
+            }
+            else
+            {
+                CompOnly = java.lang.Boolean.FALSE;
+            }
+            java.lang.Integer MaxRslt = java.lang.Integer.valueOf(maxResults.ToString());
+            HashMap[]builds = (HashMap[])Client.execute("RemoteApi.getLatestBuildsForProject", java.util.Arrays.asList(new object[] { authToken, projectName, CompOnly, MaxRslt}));
             foreach (HashMap hm in builds)
             {
                 rslt.Add(Serializers.SerializeBuildResult(hm));

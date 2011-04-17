@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Zutubi.Pulse.Api</RootNamespace>
     <AssemblyName>Zutubi.Pulse.Api</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -151,8 +151,14 @@
     <Compile Include="Types\TestSummary.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="IKVM.OpenJDK.Core">
+      <HintPath>..\Lib\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util">
+      <HintPath>..\Lib\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
     <Reference Include="Org.Apache.XmlRpc">
-      <HintPath>..\Org.Apache.XmlRpc.dll</HintPath>
+      <HintPath>..\Lib\Org.Apache.XmlRpc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>

@@ -63,7 +63,7 @@ namespace Zutubi.Pulse.Api
                 {
                     string tmptoken = (string)Client.execute("RemoteApi.login", java.util.Arrays.asList(new object[] { usrname, pass }));
                     object[] prjnames = (object[])Client.execute("RemoteApi.getAllProjectNames", java.util.Arrays.asList(tmptoken));
-                    if (((string[])prjnames).Length > 0)
+                    if (prjnames.Length > 0)
                     {
                         authToken = tmptoken;
                         Authenticated = true;

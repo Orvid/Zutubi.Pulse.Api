@@ -96,6 +96,7 @@ namespace Zutubi.Pulse.Api.Example
             this.label2.TabIndex = 1;
             this.label2.Text = "Port:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -139,6 +140,7 @@ namespace Zutubi.Pulse.Api.Example
             this.textBox2.Size = new System.Drawing.Size(285, 20);
             this.textBox2.TabIndex = 5;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox2.Visible = false;
             // 
             // textBox3
             // 
@@ -205,6 +207,7 @@ namespace Zutubi.Pulse.Api.Example
             this.button1.TabIndex = 0;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -215,6 +218,7 @@ namespace Zutubi.Pulse.Api.Example
             this.button2.TabIndex = 0;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ServerLoginForm
             // 

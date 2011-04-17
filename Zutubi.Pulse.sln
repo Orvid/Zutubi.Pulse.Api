@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zutubi.Pulse.Api", "Zutubi.Pulse.Api\Zutubi.Pulse.Api.csproj", "{8D944755-EE9E-493C-9988-FA6441FC71AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zutubi.Pulse.Api.Example", "Zutubi.Pulse.Api.Example\Zutubi.Pulse.Api.Example.csproj", "{78E1AE1C-D5D2-4257-8CFA-E0F30D526F76}"

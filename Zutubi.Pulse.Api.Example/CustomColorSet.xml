@@ -1,0 +1,51 @@
+<colorScheme saveOptions="ChangedThemeColors">
+  <themes />
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabControlBackground2">
+    <Default>Maroon</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabPageBackground1">
+    <Default>LavenderBlush</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabStripNavigationAreaBackground2">
+    <Default>DarkRed</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabButtonBackground1">
+    <Default>Orange</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabButtonBackground2">
+    <Default>Chocolate</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabStripBackground1">
+    <Default>Red</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabPageBackground2">
+    <Default>White</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabStripBackground2">
+    <Default>DarkRed</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabStripNavigationAreaBackground1">
+    <Default>OrangeRed</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabControlBorder">
+    <Default>Lime</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabControlContentBackground1">
+    <Default>64, 64, 64</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabControlContentBorder">
+    <Default>Black</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabPageBorder">
+    <Default>White</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabButtonActiveBackground1">
+    <Default>Orange</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabControlBackground1">
+    <Default>Red</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TabButtonActiveBackground2">
+    <Default>OrangeRed</Default>
+  </color>
+</colorScheme>
