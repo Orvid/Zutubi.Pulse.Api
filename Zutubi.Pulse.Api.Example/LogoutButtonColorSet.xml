@@ -1,24 +1,27 @@
 <colorScheme saveOptions="ChangedThemeColors">
   <themes />
-  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="MarkupTextCustom5">
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonBackground2">
     <Default>Lime</Default>
   </color>
-  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="TextColor">
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonHotBackground2">
     <Default>Lime</Default>
   </color>
-  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="MarkupTextCustom4">
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonHotBackground1">
+    <Default>MediumSeaGreen</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonPressedBackground1">
+    <Default>MediumSeaGreen</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonPressedBorder">
     <Default>Lime</Default>
   </color>
-  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="MarkupText">
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonFocusedInnerGlow">
+    <Default>MediumSeaGreen</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonPressedBackground2">
     <Default>Lime</Default>
   </color>
-  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="MarkupTextCustom1">
-    <Default>Lime</Default>
-  </color>
-  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="MarkupTextCustom2">
-    <Default>Lime</Default>
-  </color>
-  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="MarkupTextCustom3">
-    <Default>Lime</Default>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonBackground1">
+    <Default>DarkGreen</Default>
   </color>
 </colorScheme>

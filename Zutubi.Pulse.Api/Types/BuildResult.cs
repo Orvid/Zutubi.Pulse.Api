@@ -12,7 +12,7 @@ namespace Zutubi.Pulse.Api.Types
         /// <summary>
         /// The build identifier or number of the build.
         /// </summary>
-        public String ID;
+        public Int32 ID;
         /// <summary>
         /// True if the build has completed.
         /// </summary>

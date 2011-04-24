@@ -29,13 +29,12 @@ namespace Zutubi.Pulse.Api.Example
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Qios.DevSuite.Components.QMarkupTextStyle qMarkupTextStyle2 = new Qios.DevSuite.Components.QMarkupTextStyle();
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node1");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
+            treeNode1});
             this.qTabControl1 = new Qios.DevSuite.Components.QTabControl();
             this.DashboardTab = new Qios.DevSuite.Components.QTabPage();
-            this.qMarkupLabel1 = new Qios.DevSuite.Components.QMarkupLabel();
+            this.LogoutButton = new Qios.DevSuite.Components.QButton();
             this.BrowseTab = new Qios.DevSuite.Components.QTabPage();
             this.ProjectListView = new System.Windows.Forms.ListView();
             this.ProjectNameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,9 +52,9 @@ namespace Zutubi.Pulse.Api.Example
             this.ProjectsTab = new Qios.DevSuite.Components.QTabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
+            this.UsersAdminTab = new Qios.DevSuite.Components.QTabPage();
             this.AgentAdminTab = new Qios.DevSuite.Components.QTabPage();
             this.SettingsTab = new Qios.DevSuite.Components.QTabPage();
-            this.UsersAdminTab = new Qios.DevSuite.Components.QTabPage();
             this.GroupAdminTab = new Qios.DevSuite.Components.QTabPage();
             this.PluginsAdminTab = new Qios.DevSuite.Components.QTabPage();
             this.qPersistenceManager1 = new Qios.DevSuite.Components.QPersistenceManager(this.components);
@@ -89,7 +88,7 @@ namespace Zutubi.Pulse.Api.Example
             this.qTabControl1.ColorScheme.TabStripBackground2.SetColor("Default", System.Drawing.Color.DarkRed, false);
             this.qTabControl1.ColorScheme.TabStripNavigationAreaBackground1.SetColor("Default", System.Drawing.Color.OrangeRed, false);
             this.qTabControl1.ColorScheme.TabStripNavigationAreaBackground2.SetColor("Default", System.Drawing.Color.DarkRed, false);
-            this.qTabControl1.Controls.Add(this.qMarkupLabel1);
+            this.qTabControl1.Controls.Add(this.LogoutButton);
             this.qTabControl1.Controls.Add(this.DashboardTab);
             this.qTabControl1.Controls.Add(this.BrowseTab);
             this.qTabControl1.Controls.Add(this.ServerTab);
@@ -120,39 +119,26 @@ namespace Zutubi.Pulse.Api.Example
             this.DashboardTab.Size = new System.Drawing.Size(789, 518);
             this.DashboardTab.Text = "Dashboard";
             // 
-            // qMarkupLabel1
+            // LogoutButton
             // 
-            this.qMarkupLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.qMarkupLabel1.ColorScheme.MarkupText.SetColor("Default", System.Drawing.Color.Lime, false);
-            this.qMarkupLabel1.ColorScheme.MarkupTextCustom1.SetColor("Default", System.Drawing.Color.Lime, false);
-            this.qMarkupLabel1.ColorScheme.MarkupTextCustom2.SetColor("Default", System.Drawing.Color.Lime, false);
-            this.qMarkupLabel1.ColorScheme.MarkupTextCustom3.SetColor("Default", System.Drawing.Color.Lime, false);
-            this.qMarkupLabel1.ColorScheme.MarkupTextCustom4.SetColor("Default", System.Drawing.Color.Lime, false);
-            this.qMarkupLabel1.ColorScheme.MarkupTextCustom5.SetColor("Default", System.Drawing.Color.Lime, false);
-            this.qMarkupLabel1.ColorScheme.TextColor.SetColor("Default", System.Drawing.Color.Lime, false);
-            this.qMarkupLabel1.Configuration.AdjustHeightToTextSize = false;
-            this.qMarkupLabel1.Configuration.CanFocus = false;
-            this.qMarkupLabel1.Configuration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.qMarkupLabel1.Configuration.WrapText = false;
-            this.qMarkupLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            qMarkupTextStyle2.FontDefinition = new Qios.DevSuite.Components.QFontDefinition(null, true, false, false, false, -1F);
-            qMarkupTextStyle2.FontDefinitionActive = new Qios.DevSuite.Components.QFontDefinition(null, true, false, false, false, -1F);
-            qMarkupTextStyle2.FontDefinitionHot = new Qios.DevSuite.Components.QFontDefinition(null, true, false, false, false, -1F);
-            qMarkupTextStyle2.TextColorActiveProperty = "Lime";
-            qMarkupTextStyle2.TextColorDisabledProperty = "Gray";
-            qMarkupTextStyle2.TextColorHotProperty = "Lime";
-            qMarkupTextStyle2.TextColorProperty = "Lime";
-            qMarkupTextStyle2.WrapText = Qios.DevSuite.Components.QTristateBool.False;
-            this.qMarkupLabel1.CustomStyles.Add(qMarkupTextStyle2);
-            this.qMarkupLabel1.FontScope = Qios.DevSuite.Components.QFontScope.Local;
-            this.qMarkupLabel1.LocalFont = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qMarkupLabel1.Location = new System.Drawing.Point(731, 3);
-            this.qMarkupLabel1.MarkupText = "Logout";
-            this.qMarkupLabel1.Name = "qMarkupLabel1";
-            this.qMarkupLabel1.Size = new System.Drawing.Size(53, 18);
-            this.qMarkupLabel1.TabIndex = 1;
-            this.qMarkupLabel1.ToolTipText = "Logout of the server.";
-            this.qMarkupLabel1.ElementLinkClick += new Qios.DevSuite.Components.QMarkupTextElementEventHandler(this.qMarkupLabel1_ElementLinkClick);
+            this.LogoutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogoutButton.ColorScheme.ButtonBackground1.SetColor("Default", System.Drawing.Color.DarkGreen, false);
+            this.LogoutButton.ColorScheme.ButtonBackground2.SetColor("Default", System.Drawing.Color.Lime, false);
+            this.LogoutButton.ColorScheme.ButtonFocusedInnerGlow.SetColor("Default", System.Drawing.Color.MediumSeaGreen, false);
+            this.LogoutButton.ColorScheme.ButtonHotBackground1.SetColor("Default", System.Drawing.Color.MediumSeaGreen, false);
+            this.LogoutButton.ColorScheme.ButtonHotBackground2.SetColor("Default", System.Drawing.Color.Lime, false);
+            this.LogoutButton.ColorScheme.ButtonPressedBackground1.SetColor("Default", System.Drawing.Color.MediumSeaGreen, false);
+            this.LogoutButton.ColorScheme.ButtonPressedBackground2.SetColor("Default", System.Drawing.Color.Lime, false);
+            this.LogoutButton.ColorScheme.ButtonPressedBorder.SetColor("Default", System.Drawing.Color.Black, false);
+            this.LogoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogoutButton.Image = null;
+            this.LogoutButton.Location = new System.Drawing.Point(709, 3);
+            this.LogoutButton.Name = "LogoutButton";
+            this.LogoutButton.PaintTransparentBackground = true;
+            this.LogoutButton.Size = new System.Drawing.Size(75, 23);
+            this.LogoutButton.TabIndex = 7;
+            this.LogoutButton.Text = "Logout";
+            this.LogoutButton.Click += new System.EventHandler(this.qButton1_Click);
             // 
             // BrowseTab
             // 
@@ -269,9 +255,9 @@ namespace Zutubi.Pulse.Api.Example
             this.qTabControl2.ColorScheme.TabStripNavigationAreaBackground1.SetColor("Default", System.Drawing.Color.OrangeRed, false);
             this.qTabControl2.ColorScheme.TabStripNavigationAreaBackground2.SetColor("Default", System.Drawing.Color.DarkRed, false);
             this.qTabControl2.Controls.Add(this.ProjectsTab);
+            this.qTabControl2.Controls.Add(this.UsersAdminTab);
             this.qTabControl2.Controls.Add(this.AgentAdminTab);
             this.qTabControl2.Controls.Add(this.SettingsTab);
-            this.qTabControl2.Controls.Add(this.UsersAdminTab);
             this.qTabControl2.Controls.Add(this.GroupAdminTab);
             this.qTabControl2.Controls.Add(this.PluginsAdminTab);
             this.qTabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -287,6 +273,9 @@ namespace Zutubi.Pulse.Api.Example
             this.qTabControl2.TabStripLeftConfiguration.AllowDrop = false;
             this.qTabControl2.TabStripRightConfiguration.AllowDrag = false;
             this.qTabControl2.TabStripRightConfiguration.AllowDrop = false;
+            this.qTabControl2.TabStripTopConfiguration.Appearance.Shape = new Qios.DevSuite.Components.QShape(Qios.DevSuite.Components.QBaseShapeType.SquareTabStrip);
+            this.qTabControl2.TabStripTopConfiguration.ButtonConfiguration.Appearance.Shape = new Qios.DevSuite.Components.QShape(Qios.DevSuite.Components.QBaseShapeType.RoundedTab);
+            this.qTabControl2.TabStripTopConfiguration.ButtonConfiguration.AppearanceActive.Shape = new Qios.DevSuite.Components.QShape(Qios.DevSuite.Components.QBaseShapeType.RoundedTab);
             this.qTabControl2.TabStripTopConfiguration.SizeBehavior = ((Qios.DevSuite.Components.QTabStripSizeBehaviors)((Qios.DevSuite.Components.QTabStripSizeBehaviors.Shrink | Qios.DevSuite.Components.QTabStripSizeBehaviors.Scroll)));
             this.qTabControl2.Text = "qTabControl2";
             // 
@@ -310,7 +299,7 @@ namespace Zutubi.Pulse.Api.Example
             // 
             this.splitContainer1.Panel1.Controls.Add(this.treeView1);
             this.splitContainer1.Size = new System.Drawing.Size(789, 491);
-            this.splitContainer1.SplitterDistance = 262;
+            this.splitContainer1.SplitterDistance = 260;
             this.splitContainer1.TabIndex = 0;
             // 
             // treeView1
@@ -319,14 +308,23 @@ namespace Zutubi.Pulse.Api.Example
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            treeNode3.Name = "Node1";
-            treeNode3.Text = "Node1";
-            treeNode4.Name = "Node0";
-            treeNode4.Text = "Node0";
+            treeNode1.Name = "Node1";
+            treeNode1.Text = "Node1";
+            treeNode2.Name = "Node0";
+            treeNode2.Text = "Node0";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4});
-            this.treeView1.Size = new System.Drawing.Size(262, 491);
+            treeNode2});
+            this.treeView1.Size = new System.Drawing.Size(260, 491);
             this.treeView1.TabIndex = 0;
+            // 
+            // UsersAdminTab
+            // 
+            this.UsersAdminTab.ButtonOrder = 3;
+            this.UsersAdminTab.Location = new System.Drawing.Point(0, 27);
+            this.UsersAdminTab.Name = "UsersAdminTab";
+            this.UsersAdminTab.PersistGuid = new System.Guid("29d950db-efa6-4fc0-9851-ea8d3126d772");
+            this.UsersAdminTab.Size = new System.Drawing.Size(789, 491);
+            this.UsersAdminTab.Text = "Users";
             // 
             // AgentAdminTab
             // 
@@ -345,15 +343,6 @@ namespace Zutubi.Pulse.Api.Example
             this.SettingsTab.PersistGuid = new System.Guid("937adc21-d9fc-4a24-beb0-a571a39dabc8");
             this.SettingsTab.Size = new System.Drawing.Size(789, 491);
             this.SettingsTab.Text = "Settings";
-            // 
-            // UsersAdminTab
-            // 
-            this.UsersAdminTab.ButtonOrder = 3;
-            this.UsersAdminTab.Location = new System.Drawing.Point(0, 27);
-            this.UsersAdminTab.Name = "UsersAdminTab";
-            this.UsersAdminTab.PersistGuid = new System.Guid("29d950db-efa6-4fc0-9851-ea8d3126d772");
-            this.UsersAdminTab.Size = new System.Drawing.Size(789, 491);
-            this.UsersAdminTab.Text = "Users";
             // 
             // GroupAdminTab
             // 
@@ -427,7 +416,7 @@ namespace Zutubi.Pulse.Api.Example
         private System.Windows.Forms.ColumnHeader TimeToBuildColumn;
         private System.Windows.Forms.ColumnHeader BuildReasonColumn;
         private System.Windows.Forms.ColumnHeader TestsColumn;
-        private Qios.DevSuite.Components.QMarkupLabel qMarkupLabel1;
+        private Qios.DevSuite.Components.QButton LogoutButton;
 
     }
 }

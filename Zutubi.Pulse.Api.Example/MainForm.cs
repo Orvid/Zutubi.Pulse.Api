@@ -21,7 +21,7 @@ namespace Zutubi.Pulse.Api.Example
                 ListViewItem i = ProjectListView.Items.Add(s);
                 List<BuildResult> builds = Interface.GetLatestBuildsForProject(s, false, 1);
                 BuildResult br = builds[0];
-                i.SubItems.Add(br.ID);
+                i.SubItems.Add(br.ID.ToString());
                 i.SubItems.Add(br.Status);
                 i.SubItems.Add(br.Revision);
                 i.SubItems.Add(br.StartTime.ToString());
@@ -29,10 +29,9 @@ namespace Zutubi.Pulse.Api.Example
                 i.SubItems.Add(br.Reason);
                 i.SubItems.Add(br.Tests.Total.ToString());
             }
-            qMarkupLabel1.BringToFront();
         }
 
-        private void qMarkupLabel1_ElementLinkClick(object sender, Qios.DevSuite.Components.QMarkupTextElementEventArgs e)
+        private void qButton1_Click(object sender, EventArgs e)
         {
             this.Close();
             this.Dispose();

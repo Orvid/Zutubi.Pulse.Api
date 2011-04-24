@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Zutubi.Pulse.Api.Types;
 using java.util;
+using java.lang;
 
 namespace Zutubi.Pulse.Api
 {
@@ -16,15 +17,15 @@ namespace Zutubi.Pulse.Api
         public static CommandResult SerializeCommandResult(HashMap hm)
         {
             CommandResult cr = new CommandResult();
-            cr.Completed = (bool)hm.get("completed");
-            cr.EndTime = DateTime.Parse(((Date)hm.get("endTime")).toString());
-            cr.ErrorCount = (int)hm.get("errorCount");
+            cr.Completed = Convert.ToBool((java.lang.Boolean)hm.get("completed"));
+            cr.EndTime = Convert.ToDateTime((Date)hm.get("endTime"));
+            cr.ErrorCount = Convert.ToInt32((Integer)hm.get("errorCount"));
             cr.Name = (string)hm.get("name");
-            cr.Progress = (int)hm.get("progress");
-            cr.StartTime = DateTime.Parse(((Date)hm.get("startTime")).toString());
+            cr.Progress = Convert.ToInt32((Integer)hm.get("progress"));
+            cr.StartTime = Convert.ToDateTime((Date)hm.get("startTime"));
             cr.Status = (string)hm.get("status");
-            cr.Succeeded = (bool)hm.get("succeeded");
-            cr.WarningCount = (int)hm.get("warningCount");
+            cr.Succeeded = Convert.ToBool((java.lang.Boolean)hm.get("succeeded"));
+            cr.WarningCount = Convert.ToInt32((Integer)hm.get("warningCount"));
             cr.Properties = SerializeCommandResultProperties((HashMap)hm.get("properties"));
             return cr;
         }

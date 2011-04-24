@@ -17,8 +17,8 @@ namespace Zutubi.Pulse.Api
         {
             QueuedBuild qb = new QueuedBuild();
             qb.ID = (string)hm.get("id");
-            qb.IsPersonal = (bool)hm.get("isPersonal");
-            qb.IsReplaceable = (bool)hm.get("isReplaceable");
+            qb.IsPersonal = Convert.ToBool((java.lang.Boolean)hm.get("isPersonal"));
+            qb.IsReplaceable = Convert.ToBool((java.lang.Boolean)hm.get("isReplaceable"));
             qb.Owner = (string)hm.get("owner");
             qb.Project = (string)hm.get("project");
             qb.QueuedTime = (string)hm.get("queuedTime");

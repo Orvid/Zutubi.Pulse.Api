@@ -23,6 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Bin\Zutubi.Pulse.Api.xml</DocumentationFile>
+    <NoWarn>612</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,8 +33,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Bin\Zutubi.Pulse.Api.xml</DocumentationFile>
+    <NoWarn>612</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Conversions\Boolean.cs" />
+    <Compile Include="Conversions\DateTime.cs" />
+    <Compile Include="Conversions\Integer.cs" />
     <Compile Include="Interface\Base.cs" />
     <Compile Include="Interface\CanPullUpConfig.cs" />
     <Compile Include="Interface\CanCloneConfig.cs" />
@@ -162,6 +167,7 @@
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
