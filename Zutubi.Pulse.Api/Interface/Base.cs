@@ -91,7 +91,7 @@ namespace Zutubi.Pulse.Api
             }
             else
             {
-                if (required > AuthLevel)
+                if (required >= AuthLevel)
                 {
                     throw new Exception("You don't have permission to perform this action.");
                 }
