@@ -16,9 +16,14 @@ namespace Zutubi.Pulse.Api.Example
         private void MainForm_Load(object sender, EventArgs e)
         {
             Program.ServerLogin.ShowDialog();
-            foreach (string s in Interface.GetAllProjectNames()) 
+            ReloadProjectList();
+        }
+
+        private static void ReloadProjectList()
+        {
+            foreach (string s in Interface.GetAllProjectNames())
             {
-                ListViewItem i = ProjectListView.Items.Add(s);
+                ListViewItem i = Program.MainForm.ProjectListView.Items.Add(s);
                 List<BuildResult> builds = Interface.GetLatestBuildsForProject(s, false, 1);
                 BuildResult br = builds[0];
                 i.SubItems.Add(br.ID.ToString());

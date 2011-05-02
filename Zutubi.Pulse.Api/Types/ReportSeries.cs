@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using CookComputing.XmlRpc;
+using System.Runtime.InteropServices;
 
 namespace Zutubi.Pulse.Api.Types
 {
@@ -11,11 +13,13 @@ namespace Zutubi.Pulse.Api.Types
     /// viewed as a single list of (label, value) points by pairing entries
     /// at the same index in each list.
     /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
     public struct ReportSeries
     {
         /// <summary>
         /// The name of the series. 
         /// </summary>
+        [XmlRpcMember("name")]
         public String Name;
         /// <summary>
         /// A list of labels, or domain (x) axis values
@@ -26,10 +30,12 @@ namespace Zutubi.Pulse.Api.Types
         /// since the epoch (UTC), marking midnight of the
         /// day that the data point corresponds to. 
         /// </summary>
+        [XmlRpcMember("labels")]
         public List<String> Labels;
         /// <summary>
         /// A list of values, or range (y) axis values for each of the corresponding labels. 
         /// </summary>
+        [XmlRpcMember("values")]
         public List<Double> Values;
     }
 }

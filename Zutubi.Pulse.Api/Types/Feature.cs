@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using CookComputing.XmlRpc;
+using System.Runtime.InteropServices;
 
 namespace Zutubi.Pulse.Api.Types
 {
@@ -15,31 +17,38 @@ namespace Zutubi.Pulse.Api.Types
     /// The fields that hold this context information will not be
     /// present when the context is not applicable.
     /// </summary>
+    [StructLayout(LayoutKind.Sequential)]
     public struct Feature
     {
         /// <summary>
         /// The type of feature. 
         /// </summary>
+        [XmlRpcMember("level")]
         public FeatureLevel Level;
         /// <summary>
         /// The feature message, which may be multi-line if captured from an artifact with context.
         /// </summary>
+        [XmlRpcMember("message")]
         public String Message;
         /// <summary>
         /// Name of the build stage that the feature was found in, not present if the feature refers to the entire build.
         /// </summary>
+        [XmlRpcMember("stage")]
         public String Stage;
         /// <summary>
         /// Name of the command that the feature was found in, not present if the feature was not specific to a command. 
         /// </summary>
+        [XmlRpcMember("command")]
         public String Command;
         /// <summary>
         /// Name of the artifact that the feature was extracted from, not present if the feature was not found in an artifact. 
         /// </summary>
+        [XmlRpcMember("artifact")]
         public String Artifact;
         /// <summary>
         /// Path of the artifact file that the feature was extracted from, not present if the feature was not found in an artifact. 
         /// </summary>
+        [XmlRpcMember("path")]
         public String Path;
     }
     /// <summary>

@@ -23,7 +23,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Bin\Zutubi.Pulse.Api.xml</DocumentationFile>
-    <NoWarn>612</NoWarn>
+    <NoWarn>612;649;</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,139 +33,259 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\Bin\Zutubi.Pulse.Api.xml</DocumentationFile>
-    <NoWarn>612</NoWarn>
+    <NoWarn>612;649;</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Conversions\Boolean.cs" />
-    <Compile Include="Conversions\DateTime.cs" />
-    <Compile Include="Conversions\Integer.cs" />
+    <Reference Include="System" />
+	<Reference Include="mscorlib" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interface\Backend\BackendInterface.cs" />
     <Compile Include="Interface\Base.cs" />
-    <Compile Include="Interface\CanPullUpConfig.cs" />
-    <Compile Include="Interface\CanCloneConfig.cs" />
-    <Compile Include="Interface\CancelQueuedBuildRequest.cs" />
-    <Compile Include="Interface\CancelBuild.cs" />
-    <Compile Include="Interface\AddBuildComment.cs" />
-    <Compile Include="Interface\GetLatestBuildsForProject.cs" />
-    <Compile Include="Interface\GetAllProjectNames.cs" />
-    <Compile Include="Interface\~CanPushDownConfig.cs" />
-    <Compile Include="Interface\~ClearResponsibility.cs" />
-    <Compile Include="Interface\~CloneConfig.cs" />
-    <Compile Include="Interface\~ConfigPathExists.cs" />
-    <Compile Include="Interface\~CreateDefaultConfig.cs" />
-    <Compile Include="Interface\~DeleteAllConfigs.cs" />
-    <Compile Include="Interface\~DeleteBuildComment.cs" />
-    <Compile Include="Interface\~DeleteConfig.cs" />
-    <Compile Include="Interface\~DisableAgent.cs" />
-    <Compile Include="Interface\~DoConfigAction.cs" />
-    <Compile Include="Interface\~DoConfigActionWithArgument.cs" />
-    <Compile Include="Interface\~EnableAgent.cs" />
-    <Compile Include="Interface\~GetAgentCount.cs" />
-    <Compile Include="Interface\~GetAgentEnableState.cs" />
-    <Compile Include="Interface\~GetAgentStatus.cs" />
-    <Compile Include="Interface\~GetAllAgentNames.cs" />
-    <Compile Include="Interface\~GetAllProjectGroups.cs" />
-    <Compile Include="Interface\~GetAllUserLogins.cs" />
-    <Compile Include="Interface\~GetArtifactFileListing.cs" />
-    <Compile Include="Interface\~GetArtifactListingPersonal.cs" />
-    <Compile Include="Interface\~GetArtifactsInBuild.cs" />
-    <Compile Include="Interface\~GetArtifactsInPersonalBuild.cs" />
-    <Compile Include="Interface\~GetBuild.cs" />
-    <Compile Include="Interface\~GetBuildComments.cs" />
-    <Compile Include="Interface\~GetBuildQueueSnapshot.cs" />
-    <Compile Include="Interface\~GetChangesInBuild.cs" />
-    <Compile Include="Interface\~GetConfig.cs" />
-    <Compile Include="Interface\~GetConfigActions.cs" />
-    <Compile Include="Interface\~GetConfigHandle.cs" />
-    <Compile Include="Interface\~GetConfigListing.cs" />
-    <Compile Include="Interface\~GetCustomFieldsInBuild.cs" />
-    <Compile Include="Interface\~GetErrorMessagesInBuild.cs" />
-    <Compile Include="Interface\~GetInfoMessagesInBuild.cs" />
-    <Compile Include="Interface\~GetLatestBuildForProject.cs" />
-    <Compile Include="Interface\~GetLatestBuildsWithWarnings.cs" />
-    <Compile Include="Interface\~GetLatestBuildWithWarnings.cs" />
-    <Compile Include="Interface\~GetLatestPersonalBuild.cs" />
-    <Compile Include="Interface\~GetLatestPersonalBuilds.cs" />
-    <Compile Include="Interface\~GetMessagesInBuild.cs" />
-    <Compile Include="Interface\~GetMyProjectNames.cs" />
-    <Compile Include="Interface\~GetNextBuildNumber.cs" />
-    <Compile Include="Interface\~GetPersonalBuild.cs" />
-    <Compile Include="Interface\~GetPreviousBuild.cs" />
-    <Compile Include="Interface\~GetProjectCount.cs" />
-    <Compile Include="Interface\~GetProjectGroup.cs" />
-    <Compile Include="Interface\~GetProjectNameById.cs" />
-    <Compile Include="Interface\~GetProjectState.cs" />
-    <Compile Include="Interface\~GetRawConfig.cs" />
-    <Compile Include="Interface\~GetReportData.cs" />
-    <Compile Include="Interface\~GetResponsibilityInfo.cs" />
-    <Compile Include="Interface\~GetServerInfo.cs" />
-    <Compile Include="Interface\~GetTemplateChildren.cs" />
-    <Compile Include="Interface\~GetTemplateParent.cs" />
-    <Compile Include="Interface\~GetUserCount.cs" />
-    <Compile Include="Interface\~GetVersion.cs" />
-    <Compile Include="Interface\~GetWarningMessagesInBuild.cs" />
-    <Compile Include="Interface\~InitializeProject.cs" />
-    <Compile Include="Interface\~InsertConfig.cs" />
-    <Compile Include="Interface\~InsertTemplatedConfig.cs" />
-    <Compile Include="Interface\~IsConfigPermanent.cs" />
-    <Compile Include="Interface\~IsConfigValid.cs" />
-    <Compile Include="Interface\~PauseProject.cs" />
-    <Compile Include="Interface\~Ping.cs" />
-    <Compile Include="Interface\~PullUpConfig.cs" />
-    <Compile Include="Interface\~PushDownConfig.cs" />
-    <Compile Include="Interface\~QueryBuildsForProject.cs" />
-    <Compile Include="Interface\~RestoreConfig.cs" />
-    <Compile Include="Interface\~ResumeProject.cs" />
-    <Compile Include="Interface\~SaveConfig.cs" />
-    <Compile Include="Interface\~SetNextBuildNumber.cs" />
-    <Compile Include="Interface\~Shutdown.cs" />
-    <Compile Include="Interface\~SmartClone.cs" />
-    <Compile Include="Interface\~StopService.cs" />
-    <Compile Include="Interface\~TakeResponsibility.cs" />
-    <Compile Include="Interface\~TriggerBuild.cs" />
-    <Compile Include="Interface\~WaitForBuildRequestToBeActivated.cs" />
-    <Compile Include="Interface\~WaitForBuildRequestToBeHandled.cs" />
+    <Compile Include="Interface\MonitorApi\_+GetStatusForProjects.cs" />
+    <Compile Include="Interface\MonitorApi\_+GetStatusForMyProjects.cs" />
+    <Compile Include="Interface\MonitorApi\_+GetStatusForAllProjects.cs" />
+    <Compile Include="Interface\RemoteApi\+CanPullUpConfig.cs" />
+    <Compile Include="Interface\RemoteApi\+CanCloneConfig.cs" />
+    <Compile Include="Interface\RemoteApi\+CancelQueuedBuildRequest.cs" />
+    <Compile Include="Interface\RemoteApi\+CancelBuild.cs" />
+    <Compile Include="Interface\RemoteApi\+AddBuildComment.cs" />
+    <Compile Include="Interface\RemoteApi\+GetLatestBuildsForProject.cs" />
+    <Compile Include="Interface\RemoteApi\+GetAllProjectNames.cs" />
+    <Compile Include="Interface\RemoteApi\~CanPushDownConfig.cs" />
+    <Compile Include="Interface\RemoteApi\~ClearResponsibility.cs" />
+    <Compile Include="Interface\RemoteApi\~CloneConfig.cs" />
+    <Compile Include="Interface\RemoteApi\~ConfigPathExists.cs" />
+    <Compile Include="Interface\RemoteApi\~CreateDefaultConfig.cs" />
+    <Compile Include="Interface\RemoteApi\~DeleteAllConfigs.cs" />
+    <Compile Include="Interface\RemoteApi\~DeleteBuildComment.cs" />
+    <Compile Include="Interface\RemoteApi\~DeleteConfig.cs" />
+    <Compile Include="Interface\RemoteApi\~DisableAgent.cs" />
+    <Compile Include="Interface\RemoteApi\~DoConfigAction.cs" />
+    <Compile Include="Interface\RemoteApi\~DoConfigActionWithArgument.cs" />
+    <Compile Include="Interface\RemoteApi\~EnableAgent.cs" />
+    <Compile Include="Interface\RemoteApi\~GetAgentCount.cs" />
+    <Compile Include="Interface\RemoteApi\~GetAgentEnableState.cs" />
+    <Compile Include="Interface\RemoteApi\~GetAgentStatus.cs" />
+    <Compile Include="Interface\RemoteApi\~GetAllAgentNames.cs" />
+    <Compile Include="Interface\RemoteApi\~GetAllProjectGroups.cs" />
+    <Compile Include="Interface\RemoteApi\~GetAllUserLogins.cs" />
+    <Compile Include="Interface\RemoteApi\~GetArtifactFileListing.cs" />
+    <Compile Include="Interface\RemoteApi\~GetArtifactListingPersonal.cs" />
+    <Compile Include="Interface\RemoteApi\~GetArtifactsInBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~GetArtifactsInPersonalBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~GetBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~GetBuildComments.cs" />
+    <Compile Include="Interface\RemoteApi\~GetBuildQueueSnapshot.cs" />
+    <Compile Include="Interface\RemoteApi\~GetChangesInBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~GetConfig.cs" />
+    <Compile Include="Interface\RemoteApi\~GetConfigActions.cs" />
+    <Compile Include="Interface\RemoteApi\~GetConfigHandle.cs" />
+    <Compile Include="Interface\RemoteApi\~GetConfigListing.cs" />
+    <Compile Include="Interface\RemoteApi\~GetCustomFieldsInBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~GetErrorMessagesInBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~GetInfoMessagesInBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~GetLatestBuildForProject.cs" />
+    <Compile Include="Interface\RemoteApi\~GetLatestBuildsWithWarnings.cs" />
+    <Compile Include="Interface\RemoteApi\~GetLatestBuildWithWarnings.cs" />
+    <Compile Include="Interface\RemoteApi\~GetLatestPersonalBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~GetLatestPersonalBuilds.cs" />
+    <Compile Include="Interface\RemoteApi\~GetMessagesInBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~GetMyProjectNames.cs" />
+    <Compile Include="Interface\RemoteApi\~GetNextBuildNumber.cs" />
+    <Compile Include="Interface\RemoteApi\~GetPersonalBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~GetPreviousBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~GetProjectCount.cs" />
+    <Compile Include="Interface\RemoteApi\~GetProjectGroup.cs" />
+    <Compile Include="Interface\RemoteApi\~GetProjectNameById.cs" />
+    <Compile Include="Interface\RemoteApi\~GetProjectState.cs" />
+    <Compile Include="Interface\RemoteApi\~GetRawConfig.cs" />
+    <Compile Include="Interface\RemoteApi\~GetReportData.cs" />
+    <Compile Include="Interface\RemoteApi\~GetResponsibilityInfo.cs" />
+    <Compile Include="Interface\RemoteApi\~GetServerInfo.cs" />
+    <Compile Include="Interface\RemoteApi\~GetTemplateChildren.cs" />
+    <Compile Include="Interface\RemoteApi\~GetTemplateParent.cs" />
+    <Compile Include="Interface\RemoteApi\~GetUserCount.cs" />
+    <Compile Include="Interface\RemoteApi\~GetVersion.cs" />
+    <Compile Include="Interface\RemoteApi\~GetWarningMessagesInBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~InitializeProject.cs" />
+    <Compile Include="Interface\RemoteApi\~InsertConfig.cs" />
+    <Compile Include="Interface\RemoteApi\~InsertTemplatedConfig.cs" />
+    <Compile Include="Interface\RemoteApi\~IsConfigPermanent.cs" />
+    <Compile Include="Interface\RemoteApi\~IsConfigValid.cs" />
+    <Compile Include="Interface\RemoteApi\~PauseProject.cs" />
+    <Compile Include="Interface\RemoteApi\Ping.cs" />
+    <Compile Include="Interface\RemoteApi\~PullUpConfig.cs" />
+    <Compile Include="Interface\RemoteApi\~PushDownConfig.cs" />
+    <Compile Include="Interface\RemoteApi\~QueryBuildsForProject.cs" />
+    <Compile Include="Interface\RemoteApi\~RestoreConfig.cs" />
+    <Compile Include="Interface\RemoteApi\~ResumeProject.cs" />
+    <Compile Include="Interface\RemoteApi\~SaveConfig.cs" />
+    <Compile Include="Interface\RemoteApi\~SetNextBuildNumber.cs" />
+    <Compile Include="Interface\RemoteApi\Shutdown.cs" />
+    <Compile Include="Interface\RemoteApi\~SmartClone.cs" />
+    <Compile Include="Interface\RemoteApi\_StopService.cs" />
+    <Compile Include="Interface\RemoteApi\+TakeResponsibility.cs" />
+    <Compile Include="Interface\RemoteApi\~~TriggerBuild.cs" />
+    <Compile Include="Interface\RemoteApi\~WaitForBuildRequestToBeActivated.cs" />
+    <Compile Include="Interface\RemoteApi\+WaitForBuildRequestToBeHandled.cs" />
+    <Compile Include="Interface\TestApi\_LogWarning.cs" />
+    <Compile Include="Interface\TestApi\_EnqueueSynchronisationMessage.cs" />
+    <Compile Include="Interface\TestApi\_InstallPlugin.cs" />
+    <Compile Include="Interface\TestApi\_GetRunningPlugins.cs" />
+    <Compile Include="Interface\TestApi\_CancelActiveBuilds.cs" />
+    <Compile Include="Interface\TestApi\_LogError.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Serializers\BuildResultSerializer.cs" />
-    <Compile Include="Serializers\ArtifactSerializer.cs" />
-    <Compile Include="Serializers\ChangeListSerializer.cs" />
-    <Compile Include="Serializers\CommandResultPropertiesSerializer.cs" />
-    <Compile Include="Serializers\CommentSerializer.cs" />
-    <Compile Include="Serializers\FeatureSerializer.cs" />
-    <Compile Include="Serializers\FileChangeSerializer.cs" />
-    <Compile Include="Serializers\QueuedBuildSerializer.cs" />
-    <Compile Include="Serializers\ReportDataSerializer.cs" />
-    <Compile Include="Serializers\ReportSeriesSerializer.cs" />
-    <Compile Include="Serializers\BuildRequestStatusSerializer.cs" />
-    <Compile Include="Serializers\StageResultSerializer.cs" />
-    <Compile Include="Serializers\CommandResultSerializer.cs" />
-    <Compile Include="Serializers\TestSummarySerializer.cs" />
     <Compile Include="Types\Artifact.cs" />
     <Compile Include="Types\BuildRequestStatus.cs" />
     <Compile Include="Types\BuildResult.cs" />
     <Compile Include="Types\ChangeList.cs" />
-    <Compile Include="Types\CommandResult.cs" />
-    <Compile Include="Types\CommandResultProperties.cs" />
+    <Compile Include="Types\-CommandResult.cs" />
+    <Compile Include="Types\-CommandResultProperties.cs" />
     <Compile Include="Types\Comment.cs" />
     <Compile Include="Types\Feature.cs" />
     <Compile Include="Types\FileChange.cs" />
-    <Compile Include="Types\NameValuePair.cs" />
+    <Compile Include="Types\Plugin.cs" />
+    <Compile Include="Types\ProjectsStatus.cs" />
+    <Compile Include="Types\ProjectStatus.cs" />
     <Compile Include="Types\QueuedBuild.cs" />
     <Compile Include="Types\ReportData.cs" />
     <Compile Include="Types\ReportSeries.cs" />
     <Compile Include="Types\StageResult.cs" />
     <Compile Include="Types\TestSummary.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="IKVM.OpenJDK.Core">
-      <HintPath>..\Lib\IKVM.OpenJDK.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="IKVM.OpenJDK.Util">
-      <HintPath>..\Lib\IKVM.OpenJDK.Util.dll</HintPath>
-    </Reference>
-    <Reference Include="Org.Apache.XmlRpc">
-      <HintPath>..\Lib\Org.Apache.XmlRpc.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
+    <Compile Include="XmlRpc\DateTime8601.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\GuidEx.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\IXmlRpcProxy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\MappingStack.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\RequestResponseLogger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\Tracer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\util.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\WebSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcAsyncResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcBeginAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcClientFormatterSink.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcClientFormatterSinkProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcClientProtocol.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcDeserializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcEndAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcFaultException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcFormatSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcLogger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcMemberAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcMethodAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcMethodInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcMissingMappingAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcNonStandard.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcNullMappingAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcParameterAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcParameterInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcProxyCodeGen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcProxyGen.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcRequest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcRequestEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcRequestSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcResponseDeserializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcResponseEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcReturnValueAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcSerializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcStruct.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcTypeInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcUrlAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcXmlReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlRpc\XmlRpcXmlWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

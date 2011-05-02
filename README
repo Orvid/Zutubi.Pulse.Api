@@ -2,5 +2,8 @@ This is the .net implementation of an easy to use API for Zutubi Pulse's Remote 
 
 The main library is called Zutubi.Pulse.Api, and is in the directory of the same name. 
 Any file with a "~" in front of it's name means it's not yet implemented, and only there to show completness, and to help ensure that no functions get left out.
+Any file with a "~~" in front of it's name means that it's been looked at, but seems very difficult to implement, and as such, will be worked on later.
 Any file with a "-" in front of it's name means that some part of it isn't implemented properly and should be addressed.
+Any file with a "_" in front of it's name means that it is missing some form of Xml Documentation.
+Any file with a "+" in front of it's name means that it needs to have it's auth checking set properly. 
 Please note, the Login, and Logout functions are in the file named Base. This is because they are central to the authentication manangment feature of this implemtation.

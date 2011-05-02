@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using org.apache.xmlrpc.client;
+using Zutubi.Pulse.Api.Backend;
+using CookComputing.XmlRpc;
 
 namespace Zutubi.Pulse.Api
 {
@@ -11,17 +12,17 @@ namespace Zutubi.Pulse.Api
     public static partial class Interface
     {
         /// <summary>
-        /// This is the config that the Client uses.
-        /// </summary>
-        public static XmlRpcClientConfigImpl ClientConfig = new XmlRpcClientConfigImpl();
-        /// <summary>
         /// This is the Client that does all of the work.
         /// </summary>
-        public static XmlRpcClient Client = new XmlRpcClient();
+        private static BackendInterface Client;
         /// <summary>
         /// True if you are currently logged in to a server.
         /// </summary>
         public static bool Authenticated = false;
+        /// <summary>
+        /// The level of authentication the current user has.
+        /// </summary>
+        public static AuthType AuthLevel = AuthType.Guest;
         /// <summary>
         /// True if you are currently connected to a server.
         /// </summary>
@@ -40,13 +41,60 @@ namespace Zutubi.Pulse.Api
         public static String Username;
 
         /// <summary>
-        /// This is purely a convience method to ensure the user is connected properly.
+        /// The possible levels of authentication.
         /// </summary>
-        private static void CheckAuth()
+        public enum AuthType : int
+        {
+            /// <summary>
+            /// The top authorization level, this level has access to everything.
+            /// </summary>
+            Admin = 20,
+            /// <summary>
+            /// This level of authorization has access to everything
+            /// except managing the server itself.
+            /// </summary>
+            PrjAdmin = 19,
+            /// <summary>
+            /// Has the ability to administer a project,
+            /// and can modify, and add new things to the project.
+            /// Can also trigger builds.
+            /// </summary>
+            AdminDev = 18,
+            /// <summary>
+            /// Has same abilities as <seealso cref="AdminDev"/>,
+            /// minus the ability to add new things to the project.
+            /// </summary>
+            HighDev = 15,
+            /// <summary>
+            /// Has the ability to trigger builds.
+            /// </summary>
+            Developer = 10,
+            /// <summary>
+            /// Can only read things.
+            /// </summary>
+            ReadOnly = 5,
+            /// <summary>
+            /// The lowest possible level. Can do nothing (except for login).
+            /// </summary>
+            Guest = 0
+        }
+
+        /// <summary>
+        /// This is purely a convience method to ensure the user is connected properly.
+        /// It also checks if the user has an AuthLevel above the required level.
+        /// </summary>
+        private static void CheckAuth(AuthType required)
         {
             if (!Authenticated)
             {
-                throw new Exception("Attempted to perform an action while un-authenticated, which requires authentication.");
+                throw new Exception("Attempted to perform an action, while un-authenticated, which requires authentication.");
+            }
+            else
+            {
+                if (required > AuthLevel)
+                {
+                    throw new Exception("You don't have permission to perform this action.");
+                }
             }
         }
 
@@ -61,13 +109,14 @@ namespace Zutubi.Pulse.Api
             {
                 if (!Authenticated)
                 {
-                    string tmptoken = (string)Client.execute("RemoteApi.login", java.util.Arrays.asList(new object[] { usrname, pass }));
-                    object[] prjnames = (object[])Client.execute("RemoteApi.getAllProjectNames", java.util.Arrays.asList(tmptoken));
+                    string tmptoken = Client.Login(usrname, pass);
+                    String[] prjnames = Client.GetAllProjectNames(tmptoken);
                     if (prjnames.Length > 0)
                     {
                         authToken = tmptoken;
                         Authenticated = true;
                         Username = usrname;
+                        AuthLevel = AuthType.Admin;
                     }
                     else
                     {
@@ -93,9 +142,10 @@ namespace Zutubi.Pulse.Api
         {
             if (!ConnectedToServer)
             {
-                ClientConfig.setServerURL(new java.net.URL(server));
-                Client.setConfig(ClientConfig);
-                if (((string)Client.execute("RemoteApi.ping", java.util.Collections.EMPTY_LIST)) == "pong")
+                Client = (BackendInterface)XmlRpcProxyGen.Create(typeof(BackendInterface));
+                Client.KeepAlive = false;
+                Client.Url = server;
+                if (Client.Ping() == "pong")
                 {
                     ConnectedToServer = true;
                     Server = server;
@@ -118,9 +168,10 @@ namespace Zutubi.Pulse.Api
         {
             if (Authenticated)
             {
-                Client.execute("RemoteApi.logout", java.util.Arrays.asList(authToken));
+                Client.Logout(authToken);
                 Username = "";
                 authToken = "";
+                AuthLevel = AuthType.Guest;
                 Authenticated = false;
             }
             else
@@ -139,8 +190,7 @@ namespace Zutubi.Pulse.Api
             }
             if (ConnectedToServer)
             {
-                Client = new XmlRpcClient();
-                ClientConfig = new XmlRpcClientConfigImpl();
+                Client = (BackendInterface)XmlRpcProxyGen.Create(typeof(BackendInterface));
                 Server = "";
                 ConnectedToServer = false;
             }
