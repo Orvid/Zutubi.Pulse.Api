@@ -37,7 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-	<Reference Include="mscorlib" />
+    <Reference Include="mscorlib" />
     <Reference Include="System.Data" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
@@ -101,7 +101,7 @@
     <Compile Include="Interface\RemoteApi\~GetPreviousBuild.cs" />
     <Compile Include="Interface\RemoteApi\~GetProjectCount.cs" />
     <Compile Include="Interface\RemoteApi\~GetProjectGroup.cs" />
-    <Compile Include="Interface\RemoteApi\~GetProjectNameById.cs" />
+    <Compile Include="Interface\RemoteApi\+GetProjectNameById.cs" />
     <Compile Include="Interface\RemoteApi\~GetProjectState.cs" />
     <Compile Include="Interface\RemoteApi\~GetRawConfig.cs" />
     <Compile Include="Interface\RemoteApi\~GetReportData.cs" />
