@@ -21,6 +21,7 @@ namespace Zutubi.Pulse.Api.Types
         /// The last completed build.
         /// </summary>
         [XmlRpcMember("latestCompleted")]
+        [XmlRpcMissingMapping(MappingAction.Ignore)]
         public BuildResult? LatestCompleted;
         /// <summary>
         /// The builds that are currently in progress.
@@ -47,18 +48,18 @@ namespace Zutubi.Pulse.Api.Types
         /// The health was unable to be determined.
         /// (This is not a good sign)
         /// </summary>
-        UNKNOWN,
+        Unknown,
         /// <summary>
         /// The project is building just fine.
         /// </summary>
-        OK,
+        Ok,
         /// <summary>
         /// The project builds, but there are multiple warnings.
         /// </summary>
-        WARNINGS,
+        Warnings,
         /// <summary>
         /// The project is Broken, and does not build.
         /// </summary>
-        BROKEN
+        Broken
     }
 }

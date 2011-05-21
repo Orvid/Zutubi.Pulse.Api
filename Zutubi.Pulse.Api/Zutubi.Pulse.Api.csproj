@@ -12,7 +12,6 @@
     <AssemblyName>Zutubi.Pulse.Api</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -157,143 +156,49 @@
     <Compile Include="Types\ReportSeries.cs" />
     <Compile Include="Types\StageResult.cs" />
     <Compile Include="Types\TestSummary.cs" />
-    <Compile Include="XmlRpc\DateTime8601.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\GuidEx.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\IXmlRpcProxy.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\MappingStack.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\RequestResponseLogger.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\Tracer.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\util.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\WebSettings.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcAsyncResult.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcBeginAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcClientFormatterSink.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcClientFormatterSinkProvider.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcClientProtocol.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcDeserializer.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcEndAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcFaultException.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcFormatSettings.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcLogger.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcMemberAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcMethodAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcMethodInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcMissingMappingAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcNonStandard.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcNullMappingAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcParameterAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcParameterInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcParser.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcProxyCodeGen.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcProxyGen.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcRequest.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcRequestEventArgs.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcRequestSerializer.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcResponse.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcResponseDeserializer.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcResponseEventArgs.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcReturnValueAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcSerializer.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcStruct.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcTypeInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcUrlAttribute.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcXmlReader.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlRpc\XmlRpcXmlWriter.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="XmlRpc\DateTime8601.cs" />
+    <Compile Include="XmlRpc\GuidEx.cs" />
+    <Compile Include="XmlRpc\IXmlRpcProxy.cs" />
+    <Compile Include="XmlRpc\MappingStack.cs" />
+    <Compile Include="XmlRpc\RequestResponseLogger.cs" />
+    <Compile Include="XmlRpc\Tracer.cs" />
+    <Compile Include="XmlRpc\util.cs" />
+    <Compile Include="XmlRpc\WebSettings.cs" />
+    <Compile Include="XmlRpc\XmlRpcAsyncResult.cs" />
+    <Compile Include="XmlRpc\XmlRpcBeginAttribute.cs" />
+    <Compile Include="XmlRpc\XmlRpcClientFormatterSink.cs" />
+    <Compile Include="XmlRpc\XmlRpcClientFormatterSinkProvider.cs" />
+    <Compile Include="XmlRpc\XmlRpcClientProtocol.cs" />
+    <Compile Include="XmlRpc\XmlRpcDeserializer.cs" />
+    <Compile Include="XmlRpc\XmlRpcEndAttribute.cs" />
+    <Compile Include="XmlRpc\XmlRpcException.cs" />
+    <Compile Include="XmlRpc\XmlRpcFaultException.cs" />
+    <Compile Include="XmlRpc\XmlRpcFormatSettings.cs" />
+    <Compile Include="XmlRpc\XmlRpcLogger.cs" />
+    <Compile Include="XmlRpc\XmlRpcMemberAttribute.cs" />
+    <Compile Include="XmlRpc\XmlRpcMethodAttribute.cs" />
+    <Compile Include="XmlRpc\XmlRpcMethodInfo.cs" />
+    <Compile Include="XmlRpc\XmlRpcMissingMappingAttribute.cs" />
+    <Compile Include="XmlRpc\XmlRpcNonStandard.cs" />
+    <Compile Include="XmlRpc\XmlRpcNullMappingAttribute.cs" />
+    <Compile Include="XmlRpc\XmlRpcParameterAttribute.cs" />
+    <Compile Include="XmlRpc\XmlRpcParameterInfo.cs" />
+    <Compile Include="XmlRpc\XmlRpcParser.cs" />
+    <Compile Include="XmlRpc\XmlRpcProxyCodeGen.cs" />
+    <Compile Include="XmlRpc\XmlRpcProxyGen.cs" />
+    <Compile Include="XmlRpc\XmlRpcRequest.cs" />
+    <Compile Include="XmlRpc\XmlRpcRequestEventArgs.cs" />
+    <Compile Include="XmlRpc\XmlRpcRequestSerializer.cs" />
+    <Compile Include="XmlRpc\XmlRpcResponse.cs" />
+    <Compile Include="XmlRpc\XmlRpcResponseDeserializer.cs" />
+    <Compile Include="XmlRpc\XmlRpcResponseEventArgs.cs" />
+    <Compile Include="XmlRpc\XmlRpcReturnValueAttribute.cs" />
+    <Compile Include="XmlRpc\XmlRpcSerializer.cs" />
+    <Compile Include="XmlRpc\XmlRpcStruct.cs" />
+    <Compile Include="XmlRpc\XmlRpcTypeInfo.cs" />
+    <Compile Include="XmlRpc\XmlRpcUrlAttribute.cs" />
+    <Compile Include="XmlRpc\XmlRpcXmlReader.cs" />
+    <Compile Include="XmlRpc\XmlRpcXmlWriter.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

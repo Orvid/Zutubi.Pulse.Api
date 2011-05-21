@@ -1,0 +1,18 @@
+<colorScheme saveOptions="ChangedThemeColors">
+  <themes />
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonHotBackground1">
+    <Default>Control</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonHotBorder">
+    <Default>ControlDark</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonPressedBorder">
+    <Default>ControlDark</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonBorder">
+    <Default>ControlDark</Default>
+  </color>
+  <color type="Qios.DevSuite.Components.QColor, Qios.DevSuite.Components" name="ButtonPressedBackground2">
+    <Default>Control</Default>
+  </color>
+</colorScheme>

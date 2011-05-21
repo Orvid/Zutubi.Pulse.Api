@@ -76,5 +76,13 @@ namespace Zutubi.Pulse.Api.Example
             this.Close();
             this.Dispose();
         }
+
+        private void textBox4_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Return)
+            {
+                button1_Click(sender, e);
+            }
+        }
     }
 }

@@ -162,6 +162,7 @@ namespace Zutubi.Pulse.Api.Example
             this.textBox4.TabIndex = 7;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox4.UseSystemPasswordChar = true;
+            this.textBox4.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyUp);
             // 
             // tableLayoutPanel2
             // 
@@ -194,7 +195,7 @@ namespace Zutubi.Pulse.Api.Example
             // 
             this.splitContainer1.Panel2.Controls.Add(this.button2);
             this.splitContainer1.Size = new System.Drawing.Size(236, 29);
-            this.splitContainer1.SplitterDistance = 118;
+            this.splitContainer1.SplitterDistance = 120;
             this.splitContainer1.SplitterWidth = 1;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -203,7 +204,7 @@ namespace Zutubi.Pulse.Api.Example
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 29);
+            this.button1.Size = new System.Drawing.Size(120, 29);
             this.button1.TabIndex = 0;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
@@ -211,10 +212,11 @@ namespace Zutubi.Pulse.Api.Example
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 29);
+            this.button2.Size = new System.Drawing.Size(115, 29);
             this.button2.TabIndex = 0;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
@@ -226,6 +228,7 @@ namespace Zutubi.Pulse.Api.Example
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 109);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ServerLoginForm";

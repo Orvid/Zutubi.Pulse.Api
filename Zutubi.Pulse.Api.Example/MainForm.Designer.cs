@@ -29,9 +29,8 @@ namespace Zutubi.Pulse.Api.Example
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Node1");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Node0", new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Global Project Template", 0, 0);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.qTabControl1 = new Qios.DevSuite.Components.QTabControl();
             this.DashboardTab = new Qios.DevSuite.Components.QTabPage();
             this.LogoutButton = new Qios.DevSuite.Components.QButton();
@@ -51,7 +50,15 @@ namespace Zutubi.Pulse.Api.Example
             this.qTabControl2 = new Qios.DevSuite.Components.QTabControl();
             this.ProjectsTab = new Qios.DevSuite.Components.QTabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.ProjectsAdminTabPanel = new Qios.DevSuite.Components.QTabControl();
+            this.ProjectsHierachyAdminTabPane = new Qios.DevSuite.Components.QTabPage();
+            this.ProjectAdminHierarchyTreeView = new System.Windows.Forms.TreeView();
+            this.ProjectAdminHierarchyTreeViewImageList = new System.Windows.Forms.ImageList(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ProjectAdminHierarchyCollapseAllButton = new Qios.DevSuite.Components.QButton();
+            this.ProjectAdminHierarchyExpandAllButton = new Qios.DevSuite.Components.QButton();
+            this.ProjectsConfigurationAdminTabPane = new Qios.DevSuite.Components.QTabPage();
+            this.projectHierarchyItem1 = new Zutubi.Pulse.Api.Example.CustomControls.ProjectHierarchyItem();
             this.UsersAdminTab = new Qios.DevSuite.Components.QTabPage();
             this.AgentAdminTab = new Qios.DevSuite.Components.QTabPage();
             this.SettingsTab = new Qios.DevSuite.Components.QTabPage();
@@ -66,7 +73,13 @@ namespace Zutubi.Pulse.Api.Example
             this.qTabControl2.SuspendLayout();
             this.ProjectsTab.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectsAdminTabPanel)).BeginInit();
+            this.ProjectsAdminTabPanel.SuspendLayout();
+            this.ProjectsHierachyAdminTabPane.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.projectHierarchyItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // qTabControl1
@@ -132,7 +145,7 @@ namespace Zutubi.Pulse.Api.Example
             this.LogoutButton.ColorScheme.ButtonPressedBorder.SetColor("Default", System.Drawing.Color.Black, false);
             this.LogoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoutButton.Image = null;
-            this.LogoutButton.Location = new System.Drawing.Point(709, 3);
+            this.LogoutButton.Location = new System.Drawing.Point(710, 1);
             this.LogoutButton.Name = "LogoutButton";
             this.LogoutButton.PaintTransparentBackground = true;
             this.LogoutButton.Size = new System.Drawing.Size(75, 23);
@@ -184,7 +197,7 @@ namespace Zutubi.Pulse.Api.Example
             // 
             // LastBuildStatusColumn
             // 
-            this.LastBuildStatusColumn.Text = "Result";
+            this.LastBuildStatusColumn.Text = "Status";
             this.LastBuildStatusColumn.Width = 96;
             // 
             // RevisionColumn
@@ -232,7 +245,7 @@ namespace Zutubi.Pulse.Api.Example
             this.AdministrationTab.Location = new System.Drawing.Point(0, 27);
             this.AdministrationTab.Name = "AdministrationTab";
             this.AdministrationTab.PersistGuid = new System.Guid("b099d871-2f68-4941-9d58-34d90fc6ee06");
-            this.AdministrationTab.Size = new System.Drawing.Size(791, 520);
+            this.AdministrationTab.Size = new System.Drawing.Size(789, 518);
             this.AdministrationTab.Text = "Administration";
             // 
             // qTabControl2
@@ -265,7 +278,7 @@ namespace Zutubi.Pulse.Api.Example
             this.qTabControl2.Location = new System.Drawing.Point(0, 0);
             this.qTabControl2.Name = "qTabControl2";
             this.qTabControl2.PersistGuid = new System.Guid("132ce42f-091d-4d75-9d44-53589b049496");
-            this.qTabControl2.Size = new System.Drawing.Size(791, 520);
+            this.qTabControl2.Size = new System.Drawing.Size(789, 518);
             this.qTabControl2.TabIndex = 1;
             this.qTabControl2.TabStripBottomConfiguration.AllowDrag = false;
             this.qTabControl2.TabStripBottomConfiguration.AllowDrop = false;
@@ -286,7 +299,7 @@ namespace Zutubi.Pulse.Api.Example
             this.ProjectsTab.Location = new System.Drawing.Point(0, 27);
             this.ProjectsTab.Name = "ProjectsTab";
             this.ProjectsTab.PersistGuid = new System.Guid("93b1d06e-fd51-456b-8f5e-aad1c15ddcef");
-            this.ProjectsTab.Size = new System.Drawing.Size(789, 491);
+            this.ProjectsTab.Size = new System.Drawing.Size(787, 489);
             this.ProjectsTab.Text = "Projects";
             // 
             // splitContainer1
@@ -297,25 +310,148 @@ namespace Zutubi.Pulse.Api.Example
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
-            this.splitContainer1.Size = new System.Drawing.Size(789, 491);
-            this.splitContainer1.SplitterDistance = 260;
+            this.splitContainer1.Panel1.Controls.Add(this.ProjectsAdminTabPanel);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.projectHierarchyItem1);
+            this.splitContainer1.Size = new System.Drawing.Size(787, 489);
+            this.splitContainer1.SplitterDistance = 257;
             this.splitContainer1.TabIndex = 0;
+            this.splitContainer1.TabStop = false;
             // 
-            // treeView1
+            // ProjectsAdminTabPanel
             // 
-            this.treeView1.BackColor = System.Drawing.Color.DarkSalmon;
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node1";
-            treeNode1.Text = "Node1";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "Node0";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
-            this.treeView1.Size = new System.Drawing.Size(260, 491);
-            this.treeView1.TabIndex = 0;
+            this.ProjectsAdminTabPanel.ActiveTabPage = this.ProjectsHierachyAdminTabPane;
+            this.ProjectsAdminTabPanel.ColorScheme.TabButtonActiveBackground1.SetColor("Default", System.Drawing.Color.Orange, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabButtonActiveBackground2.SetColor("Default", System.Drawing.Color.OrangeRed, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabButtonBackground1.SetColor("Default", System.Drawing.Color.Orange, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabButtonBackground2.SetColor("Default", System.Drawing.Color.Chocolate, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabControlBackground1.SetColor("Default", System.Drawing.Color.Red, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabControlBackground2.SetColor("Default", System.Drawing.Color.Maroon, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabControlBorder.SetColor("Default", System.Drawing.Color.Lime, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabControlContentBackground1.SetColor("Default", System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64))))), false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabControlContentBorder.SetColor("Default", System.Drawing.Color.Black, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabPageBackground1.SetColor("Default", System.Drawing.Color.LavenderBlush, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabPageBackground2.SetColor("Default", System.Drawing.Color.White, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabPageBorder.SetColor("Default", System.Drawing.Color.White, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabStripBackground1.SetColor("Default", System.Drawing.Color.Red, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabStripBackground2.SetColor("Default", System.Drawing.Color.DarkRed, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabStripNavigationAreaBackground1.SetColor("Default", System.Drawing.Color.OrangeRed, false);
+            this.ProjectsAdminTabPanel.ColorScheme.TabStripNavigationAreaBackground2.SetColor("Default", System.Drawing.Color.DarkRed, false);
+            this.ProjectsAdminTabPanel.Controls.Add(this.ProjectsHierachyAdminTabPane);
+            this.ProjectsAdminTabPanel.Controls.Add(this.ProjectsConfigurationAdminTabPane);
+            this.ProjectsAdminTabPanel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ProjectsAdminTabPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectsAdminTabPanel.Location = new System.Drawing.Point(0, 0);
+            this.ProjectsAdminTabPanel.Name = "ProjectsAdminTabPanel";
+            this.ProjectsAdminTabPanel.PersistGuid = new System.Guid("75eb28e7-7802-4d5b-a9cf-5681f8dcf768");
+            this.ProjectsAdminTabPanel.Size = new System.Drawing.Size(257, 489);
+            this.ProjectsAdminTabPanel.TabIndex = 0;
+            this.ProjectsAdminTabPanel.Text = "ProjectsAdminTabPanel";
+            // 
+            // ProjectsHierachyAdminTabPane
+            // 
+            this.ProjectsHierachyAdminTabPane.ButtonDockStyle = Qios.DevSuite.Components.QTabButtonDockStyle.Bottom;
+            this.ProjectsHierachyAdminTabPane.ButtonOrder = 0;
+            this.ProjectsHierachyAdminTabPane.Controls.Add(this.ProjectAdminHierarchyTreeView);
+            this.ProjectsHierachyAdminTabPane.Controls.Add(this.panel1);
+            this.ProjectsHierachyAdminTabPane.Location = new System.Drawing.Point(0, 0);
+            this.ProjectsHierachyAdminTabPane.Name = "ProjectsHierachyAdminTabPane";
+            this.ProjectsHierachyAdminTabPane.PersistGuid = new System.Guid("54071dc8-2e32-45ea-8b84-3129eb924243");
+            this.ProjectsHierachyAdminTabPane.Size = new System.Drawing.Size(255, 461);
+            this.ProjectsHierachyAdminTabPane.Text = "Hierarchy";
+            // 
+            // ProjectAdminHierarchyTreeView
+            // 
+            this.ProjectAdminHierarchyTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectAdminHierarchyTreeView.HideSelection = false;
+            this.ProjectAdminHierarchyTreeView.ImageIndex = 0;
+            this.ProjectAdminHierarchyTreeView.ImageList = this.ProjectAdminHierarchyTreeViewImageList;
+            this.ProjectAdminHierarchyTreeView.Location = new System.Drawing.Point(0, 0);
+            this.ProjectAdminHierarchyTreeView.Name = "ProjectAdminHierarchyTreeView";
+            treeNode1.ImageIndex = 0;
+            treeNode1.Name = "GlobalProjectTemplateNode";
+            treeNode1.SelectedImageIndex = 0;
+            treeNode1.Text = "Global Project Template";
+            this.ProjectAdminHierarchyTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode1});
+            this.ProjectAdminHierarchyTreeView.SelectedImageIndex = 0;
+            this.ProjectAdminHierarchyTreeView.Size = new System.Drawing.Size(255, 433);
+            this.ProjectAdminHierarchyTreeView.TabIndex = 3;
+            // 
+            // ProjectAdminHierarchyTreeViewImageList
+            // 
+            this.ProjectAdminHierarchyTreeViewImageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ProjectAdminHierarchyTreeViewImageList.ImageStream")));
+            this.ProjectAdminHierarchyTreeViewImageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.ProjectAdminHierarchyTreeViewImageList.Images.SetKeyName(0, "bricks-mono.gif");
+            this.ProjectAdminHierarchyTreeViewImageList.Images.SetKeyName(1, "bricks.gif");
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.ProjectAdminHierarchyCollapseAllButton);
+            this.panel1.Controls.Add(this.ProjectAdminHierarchyExpandAllButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 433);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(255, 28);
+            this.panel1.TabIndex = 2;
+            // 
+            // ProjectAdminHierarchyCollapseAllButton
+            // 
+            this.ProjectAdminHierarchyCollapseAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProjectAdminHierarchyCollapseAllButton.ColorScheme.ButtonBorder.SetColor("Default", System.Drawing.SystemColors.ControlDark, false);
+            this.ProjectAdminHierarchyCollapseAllButton.ColorScheme.ButtonHotBackground1.SetColor("Default", System.Drawing.SystemColors.Control, false);
+            this.ProjectAdminHierarchyCollapseAllButton.ColorScheme.ButtonHotBorder.SetColor("Default", System.Drawing.SystemColors.ControlDark, false);
+            this.ProjectAdminHierarchyCollapseAllButton.ColorScheme.ButtonPressedBackground2.SetColor("Default", System.Drawing.SystemColors.Control, false);
+            this.ProjectAdminHierarchyCollapseAllButton.ColorScheme.ButtonPressedBorder.SetColor("Default", System.Drawing.SystemColors.ControlDark, false);
+            this.ProjectAdminHierarchyCollapseAllButton.Image = global::Zutubi.Pulse.Api.Example.Properties.Resources.collapse;
+            this.ProjectAdminHierarchyCollapseAllButton.Location = new System.Drawing.Point(164, 3);
+            this.ProjectAdminHierarchyCollapseAllButton.Name = "ProjectAdminHierarchyCollapseAllButton";
+            this.ProjectAdminHierarchyCollapseAllButton.PaintTransparentBackground = true;
+            this.ProjectAdminHierarchyCollapseAllButton.Size = new System.Drawing.Size(88, 22);
+            this.ProjectAdminHierarchyCollapseAllButton.TabIndex = 0;
+            this.ProjectAdminHierarchyCollapseAllButton.Text = "Collapse All";
+            this.ProjectAdminHierarchyCollapseAllButton.Click += new System.EventHandler(this.ProjectAdminHierarchyCollapseAllButton_Click);
+            // 
+            // ProjectAdminHierarchyExpandAllButton
+            // 
+            this.ProjectAdminHierarchyExpandAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProjectAdminHierarchyExpandAllButton.ColorScheme.ButtonBorder.SetColor("Default", System.Drawing.SystemColors.ControlDark, false);
+            this.ProjectAdminHierarchyExpandAllButton.ColorScheme.ButtonHotBackground1.SetColor("Default", System.Drawing.SystemColors.Control, false);
+            this.ProjectAdminHierarchyExpandAllButton.ColorScheme.ButtonHotBorder.SetColor("Default", System.Drawing.SystemColors.ControlDark, false);
+            this.ProjectAdminHierarchyExpandAllButton.ColorScheme.ButtonPressedBackground2.SetColor("Default", System.Drawing.SystemColors.Control, false);
+            this.ProjectAdminHierarchyExpandAllButton.ColorScheme.ButtonPressedBorder.SetColor("Default", System.Drawing.SystemColors.ControlDark, false);
+            this.ProjectAdminHierarchyExpandAllButton.Image = global::Zutubi.Pulse.Api.Example.Properties.Resources.expand;
+            this.ProjectAdminHierarchyExpandAllButton.Location = new System.Drawing.Point(71, 3);
+            this.ProjectAdminHierarchyExpandAllButton.Name = "ProjectAdminHierarchyExpandAllButton";
+            this.ProjectAdminHierarchyExpandAllButton.PaintTransparentBackground = true;
+            this.ProjectAdminHierarchyExpandAllButton.Size = new System.Drawing.Size(87, 22);
+            this.ProjectAdminHierarchyExpandAllButton.TabIndex = 1;
+            this.ProjectAdminHierarchyExpandAllButton.Text = "Expand All";
+            this.ProjectAdminHierarchyExpandAllButton.Click += new System.EventHandler(this.ProjectAdminHierarchyExpandAllButton_Click);
+            // 
+            // ProjectsConfigurationAdminTabPane
+            // 
+            this.ProjectsConfigurationAdminTabPane.ButtonDockStyle = Qios.DevSuite.Components.QTabButtonDockStyle.Bottom;
+            this.ProjectsConfigurationAdminTabPane.ButtonOrder = 1;
+            this.ProjectsConfigurationAdminTabPane.Location = new System.Drawing.Point(0, 0);
+            this.ProjectsConfigurationAdminTabPane.Name = "ProjectsConfigurationAdminTabPane";
+            this.ProjectsConfigurationAdminTabPane.PersistGuid = new System.Guid("f1c31014-b9f5-4e4b-a5c8-9674280a0b34");
+            this.ProjectsConfigurationAdminTabPane.Size = new System.Drawing.Size(255, 463);
+            this.ProjectsConfigurationAdminTabPane.Text = "Configuration";
+            // 
+            // projectHierarchyItem1
+            // 
+            this.projectHierarchyItem1.BackColor = System.Drawing.Color.Transparent;
+            this.projectHierarchyItem1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.projectHierarchyItem1.Location = new System.Drawing.Point(0, 0);
+            this.projectHierarchyItem1.Name = "projectHierarchyItem1";
+            this.projectHierarchyItem1.ShowAddNew = true;
+            this.projectHierarchyItem1.ShowAddNewTemplate = true;
+            this.projectHierarchyItem1.ShowConfigure = true;
+            this.projectHierarchyItem1.Size = new System.Drawing.Size(526, 489);
+            this.projectHierarchyItem1.TabIndex = 0;
             // 
             // UsersAdminTab
             // 
@@ -384,7 +520,13 @@ namespace Zutubi.Pulse.Api.Example
             this.qTabControl2.ResumeLayout(false);
             this.ProjectsTab.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectsAdminTabPanel)).EndInit();
+            this.ProjectsAdminTabPanel.ResumeLayout(false);
+            this.ProjectsHierachyAdminTabPane.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.projectHierarchyItem1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -406,7 +548,6 @@ namespace Zutubi.Pulse.Api.Example
         private Qios.DevSuite.Components.QTabPage GroupAdminTab;
         private Qios.DevSuite.Components.QTabPage PluginsAdminTab;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.ListView ProjectListView;
         private System.Windows.Forms.ColumnHeader ProjectNameColumn;
         private System.Windows.Forms.ColumnHeader LastBuildColumn;
@@ -417,6 +558,15 @@ namespace Zutubi.Pulse.Api.Example
         private System.Windows.Forms.ColumnHeader BuildReasonColumn;
         private System.Windows.Forms.ColumnHeader TestsColumn;
         private Qios.DevSuite.Components.QButton LogoutButton;
+        private Qios.DevSuite.Components.QTabControl ProjectsAdminTabPanel;
+        private Qios.DevSuite.Components.QTabPage ProjectsHierachyAdminTabPane;
+        private Qios.DevSuite.Components.QTabPage ProjectsConfigurationAdminTabPane;
+        private Qios.DevSuite.Components.QButton ProjectAdminHierarchyCollapseAllButton;
+        private Qios.DevSuite.Components.QButton ProjectAdminHierarchyExpandAllButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TreeView ProjectAdminHierarchyTreeView;
+        private System.Windows.Forms.ImageList ProjectAdminHierarchyTreeViewImageList;
+        private CustomControls.ProjectHierarchyItem projectHierarchyItem1;
 
     }
 }

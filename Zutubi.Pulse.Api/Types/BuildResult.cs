@@ -53,6 +53,7 @@ namespace Zutubi.Pulse.Api.Types
         /// The build stages executed for this build.
         /// </summary>
         [XmlRpcMember("stages")]
+        [XmlRpcMissingMapping(MappingAction.Ignore)]
         public StageResult?[] Stages;
         /// <summary>
         /// The time that the build commenced, not valid in state pending.
@@ -65,10 +66,10 @@ namespace Zutubi.Pulse.Api.Types
         [XmlRpcMember("startTimeMillis")]
         public String StartTimeMillis;
         /// <summary>
-        /// The state of the build, one of {pending, in progress, terminating, success, failure, error}. See Build States.
+        /// The state of the build. See Build States.
         /// </summary>
         [XmlRpcMember("status")]
-        public String Status;
+        public BuildStatus Status;
         /// <summary>
         /// A summary of all tests run in the build.
         /// </summary>
@@ -84,6 +85,46 @@ namespace Zutubi.Pulse.Api.Types
         /// </summary>
         [XmlRpcMember("warningCount")]
         public int WarningCount;
-
+    }
+    /// <summary>
+    /// The enum that contains the possible build status's.
+    /// </summary>
+    public enum BuildStatus
+    {
+        /// <summary>
+        /// The pending build status. 
+        /// This means that the build is pending.
+        /// </summary>
+        Pending,
+        /// <summary>
+        /// The in progress build status.
+        /// This means that the build is currently in progress.
+        /// </summary>
+        In_Progress,
+        /// <summary>
+        /// The terminating build status.
+        /// This means that the build is currently terminating.
+        /// </summary>
+        Terminating,
+        /// <summary>
+        /// The terminated build status.
+        /// This means that the build was terminated.
+        /// </summary>
+        Terminated,
+        /// <summary>
+        /// The success build status.
+        /// This means that the build was successful.
+        /// </summary>
+        Success,
+        /// <summary>
+        /// The failure build status.
+        /// This means that the build failed.
+        /// </summary>
+        Failure,
+        /// <summary>
+        /// The error build status.
+        /// This means that there are errors in the build.
+        /// </summary>
+        Error
     }
 }
