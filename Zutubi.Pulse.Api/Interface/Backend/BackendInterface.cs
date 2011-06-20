@@ -20,18 +20,22 @@ namespace Zutubi.Pulse.Api.Backend
         #endregion
 
         #region TestApi
-        [XmlRpcMethod("TestApi.cancelActiveBuilds")]
-        bool CancelActiveBuilds(string token);
-        [XmlRpcMethod("TestApi.engueueSynchronisationMessage")]
-        bool EnqueueSynchronisationMessage(string token, string agent, bool synchronous, string description, bool succeed);
-        [XmlRpcMethod("TestApi.getRunningPlugins")]
-        Plugin[] GetRunningPlugins(string token);
-        [XmlRpcMethod("TestApi.installPlugin")]
-        bool InstallPlugin(string token, string pluginJar);
-        [XmlRpcMethod("TestApi.logError")]
-        bool LogError(string token, string message);
-        [XmlRpcMethod("TestApi.logWarning")]
-        bool LogWarning(string token, string message);
+		
+		#region Pulse Version 2.3.8 -- Build 0203008000
+        //[XmlRpcMethod("TestApi.cancelActiveBuilds")]
+        //bool CancelActiveBuilds(string token);
+        //[XmlRpcMethod("TestApi.engueueSynchronisationMessage")]
+        //bool EnqueueSynchronisationMessage(string token, string agent, bool synchronous, string description, bool succeed);
+        //[XmlRpcMethod("TestApi.getRunningPlugins")]
+        //Plugin[] GetRunningPlugins(string token);
+        //[XmlRpcMethod("TestApi.installPlugin")]
+        //bool InstallPlugin(string token, string pluginJar);
+        //[XmlRpcMethod("TestApi.logError")]
+        //bool LogError(string token, string message);
+        //[XmlRpcMethod("TestApi.logWarning")]
+        //bool LogWarning(string token, string message);
+		#endregion
+		
         #endregion
 
         #region RemoteApi

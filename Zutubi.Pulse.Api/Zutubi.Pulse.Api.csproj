@@ -132,12 +132,6 @@
     <Compile Include="Interface\RemoteApi\~~TriggerBuild.cs" />
     <Compile Include="Interface\RemoteApi\~WaitForBuildRequestToBeActivated.cs" />
     <Compile Include="Interface\RemoteApi\+WaitForBuildRequestToBeHandled.cs" />
-    <Compile Include="Interface\TestApi\_LogWarning.cs" />
-    <Compile Include="Interface\TestApi\_EnqueueSynchronisationMessage.cs" />
-    <Compile Include="Interface\TestApi\_InstallPlugin.cs" />
-    <Compile Include="Interface\TestApi\_GetRunningPlugins.cs" />
-    <Compile Include="Interface\TestApi\_CancelActiveBuilds.cs" />
-    <Compile Include="Interface\TestApi\_LogError.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\Artifact.cs" />
     <Compile Include="Types\BuildRequestStatus.cs" />
@@ -168,7 +162,9 @@
     <Compile Include="XmlRpc\XmlRpcBeginAttribute.cs" />
     <Compile Include="XmlRpc\XmlRpcClientFormatterSink.cs" />
     <Compile Include="XmlRpc\XmlRpcClientFormatterSinkProvider.cs" />
-    <Compile Include="XmlRpc\XmlRpcClientProtocol.cs" />
+    <Compile Include="XmlRpc\XmlRpcClientProtocol.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XmlRpc\XmlRpcDeserializer.cs" />
     <Compile Include="XmlRpc\XmlRpcEndAttribute.cs" />
     <Compile Include="XmlRpc\XmlRpcException.cs" />

@@ -29,7 +29,7 @@ namespace Zutubi.Pulse.Api.Example
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Global Project Template", 0, 0);
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Global Project Template", 0, 0);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.qTabControl1 = new Qios.DevSuite.Components.QTabControl();
             this.DashboardTab = new Qios.DevSuite.Components.QTabPage();
@@ -145,7 +145,7 @@ namespace Zutubi.Pulse.Api.Example
             this.LogoutButton.ColorScheme.ButtonPressedBorder.SetColor("Default", System.Drawing.Color.Black, false);
             this.LogoutButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoutButton.Image = null;
-            this.LogoutButton.Location = new System.Drawing.Point(710, 1);
+            this.LogoutButton.Location = new System.Drawing.Point(712, 1);
             this.LogoutButton.Name = "LogoutButton";
             this.LogoutButton.PaintTransparentBackground = true;
             this.LogoutButton.Size = new System.Drawing.Size(75, 23);
@@ -370,12 +370,12 @@ namespace Zutubi.Pulse.Api.Example
             this.ProjectAdminHierarchyTreeView.ImageList = this.ProjectAdminHierarchyTreeViewImageList;
             this.ProjectAdminHierarchyTreeView.Location = new System.Drawing.Point(0, 0);
             this.ProjectAdminHierarchyTreeView.Name = "ProjectAdminHierarchyTreeView";
-            treeNode1.ImageIndex = 0;
-            treeNode1.Name = "GlobalProjectTemplateNode";
-            treeNode1.SelectedImageIndex = 0;
-            treeNode1.Text = "Global Project Template";
+            treeNode2.ImageIndex = 0;
+            treeNode2.Name = "GlobalProjectTemplateNode";
+            treeNode2.SelectedImageIndex = 0;
+            treeNode2.Text = "Global Project Template";
             this.ProjectAdminHierarchyTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
+            treeNode2});
             this.ProjectAdminHierarchyTreeView.SelectedImageIndex = 0;
             this.ProjectAdminHierarchyTreeView.Size = new System.Drawing.Size(255, 433);
             this.ProjectAdminHierarchyTreeView.TabIndex = 3;
@@ -449,7 +449,11 @@ namespace Zutubi.Pulse.Api.Example
             this.projectHierarchyItem1.Name = "projectHierarchyItem1";
             this.projectHierarchyItem1.ShowAddNew = true;
             this.projectHierarchyItem1.ShowAddNewTemplate = true;
+            this.projectHierarchyItem1.ShowClone = false;
             this.projectHierarchyItem1.ShowConfigure = true;
+            this.projectHierarchyItem1.ShowDelete = false;
+            this.projectHierarchyItem1.ShowMove = false;
+            this.projectHierarchyItem1.ShowSmartClone = false;
             this.projectHierarchyItem1.Size = new System.Drawing.Size(526, 489);
             this.projectHierarchyItem1.TabIndex = 0;
             // 

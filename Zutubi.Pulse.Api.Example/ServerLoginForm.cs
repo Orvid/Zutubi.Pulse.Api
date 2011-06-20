@@ -13,6 +13,9 @@ namespace Zutubi.Pulse.Api.Example
         public ServerLoginForm()
         {
             InitializeComponent();
+            textBox1.Text = "iab-md.co.cc:8080";
+            textBox3.Text = "Orvid";
+            textBox4.Text = "1ron11";
         }
 
         private void button1_Click(object sender, EventArgs e)
